@@ -1,8 +1,8 @@
 ################################################
-NCSA Delta System User Guide
+Taylor Geospatial Institute RAILS System User Guide
 ################################################
 
-*Delta* is in production.
+*TGI-RAILS* is coming later this summer.
 
 System status, planned outages, and maintenance info:
 
