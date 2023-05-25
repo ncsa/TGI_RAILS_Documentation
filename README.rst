@@ -1,4 +1,4 @@
-Delta user documentation
+TGI-RAILS user documentation
 =======================================
 
-User Documentation for NCSA Delta supercomputer.  
+User Documentation for Taylor Geospatial Institute Regional AI Learning System supercomputer.  
