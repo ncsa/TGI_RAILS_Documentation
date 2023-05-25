@@ -1,7 +1,7 @@
 Good Cluster Citizenship
 ============================
 
-**You share Delta with thousands of other users** , and what you do on
+**You share TGI-RAILS with many other users** , and what you do on
 the system affects others. Exercise good citizenship to ensure that your
 activity does not adversely impact the system and the research community
 with whom you share it. Here are some rules of thumb:
