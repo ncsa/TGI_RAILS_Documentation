@@ -1,7 +1,7 @@
 Debugging And Performance Analysis
 =====================================
 
-AMDuProf Guide
+Intel ?? Guide
 -----------------
 
 NVIDIA Nsight Systems
