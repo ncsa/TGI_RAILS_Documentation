@@ -4,10 +4,10 @@ Accessing The System
 **Direct Access login_nodes**
 -----------------------------
 
-Direct access to the Delta login nodes is via ssh using your NCSA
-username, password and NCS Duo MFA. Please see page for links to NCSA
+Direct access to the TGI RAILS login nodes is via ssh using your NCSA
+username, password and NCSA Duo MFA. Please see page for links to NCSA
 Identity and NCSA Duo services. The login nodes provide access to the
-CPU and GPU resources on Delta.
+CPU and GPU resources on TGI-RAILS.
 
 +----------------------------------+----------------------------------+
 | login node hostname              | example usage with ssh           |
@@ -34,15 +34,12 @@ CPU and GPU resources on Delta.
 +----------------------------------+----------------------------------+
 
 Please see for the steps to change your NCSA password for direct access
-and set up NCSA DUO. For ACCESS awarded projects, to find your local
-NCSA username please go your\ `ACCESS Profile
-page <https://allocations.access-ci.org/profile>`__\ and scroll to the
-bottom for the Resource Provider Site Usernames table. Please contact
-help@ncsa.illinois.edu for assistance if you do not know your NCSA
+and set up NCSA DUO. Please contact
+help+tgi@ncsa.illinois.edu for assistance if you do not know your NCSA
 username.
 
 Use of ssh-key pairs is disabled for general use. Please contact NCSA
-Help at help@ncsa.illinois.edu for key-pair use by Gateway allocations.
+Help at help+tgi@ncsa.illinois.edu for key-pair use by Gateway allocations.
 
 maintaining persistent sessions: tmux
 
@@ -56,7 +53,7 @@ round-robin hostname when using tmux.
 
 ssh keyboard-interactive
 
-``For command line ssh clients, make sure to use the following settings if you have trouble logging in to delta:``
+``For command line ssh clients, make sure to use the following settings if you have trouble logging in to TGI RAILS:``
 
 ``ssh -o PreferredAuthentications=keyboard-interactive,password``
 
