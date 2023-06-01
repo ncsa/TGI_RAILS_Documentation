@@ -4,44 +4,60 @@ System Architecture
 Compute Nodes
 ----------------------
 
-The TGI-RAILS compute ecosystem is composed of two node types:
+The TGI-RAILS compute ecosystem is composed of three node types:
 
+#. Dual-socket CPU-only login nodes
 #. Dual-socket CPU-only compute nodes
 #. Dual-socket 8-way NVIDIA H100 GPU compute nodes
 
-The CPU-only and 4-way GPU nodes have 256 GB of RAM per node while the
-8-way GPU nodes have 2 TB of RAM. The CPU-only node has 0.74 TB of local
-storage while all GPU nodes have 1.5 TB of local storage.
+All processors are Intel Sapphire Rapids CPUs.
 
-Each socket contains an AMD 7763
-processor:\ https://www.amd.com/system/files/documents/amd-epyc-7003-sb-hpc-esi-vps.pdf
+Table. Login Node Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+========================= ===================
+Specification             Value
+Model                     Dell PowerEdge R660
+Number of nodes           2
+CPU                       Intel Sapphire Rapids 6426Y
+                          (PCIe Gen5)
+Sockets per node          2
+Cores per socket          16
+Cores per node            32
+Hardware threads per core 2
+Hardware threads per node 64
+Clock rate (GHz)          ~ 2.50
+RAM (GB)                  256
+Cache (KB) L1/L2/L3       37.5MB
+========================= ===================
 
 Table. CPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ========================= ===================
 Specification             Value
-Number of nodes           2
-CPU                       Intel Sapphire Rapids xxxx
+Model                     Dell PowerEdge R760
+Number of nodes           3
+CPU                       Intel Sapphire Rapids 8468
                           (PCIe Gen5)
 Sockets per node          2
-Cores per socket          xx
-Cores per node            xxx
-Hardware threads per core 1
-Hardware threads per node 128
-Clock rate (GHz)          ~ 2.45
-RAM (GB)                  256
-Cache (KB) L1/L2/L3       64/512/32768
-Local storage (TB)        0.74 TB
+Cores per socket          48
+Cores per node            96
+Hardware threads per core 2
+Hardware threads per node 192
+Clock rate (GHz)          ~ 2.10
+RAM (GB)                  512
+Cache (KB) L1/L2/L3       105MB
+Local storage (TB)        1.92 TB
 ========================= ===================
-
-The AMD CPUs are set for 4 NUMA domains per socket (NPS=4).
 
 Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------+-----------------------------------------+
 | Specification             | Value                                   |
++---------------------------+-----------------------------------------+
+| Model                     | Dell XE9680                             |
 +---------------------------+-----------------------------------------+
 | Number of nodes           | 3                                       |
 +---------------------------+-----------------------------------------+
@@ -58,21 +74,21 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 +---------------------------+-----------------------------------------+
 | CPU sockets per node      | 2                                       |
 +---------------------------+-----------------------------------------+
-| Cores per socket          | 64                                      |
+| Cores per socket          | 48                                      |
 +---------------------------+-----------------------------------------+
-| Cores per node            | 128                                     |
+| Cores per node            | 96                                      |
 +---------------------------+-----------------------------------------+
-| Hardware threads per core | 1                                       |
+| Hardware threads per core | 2                                       |
 +---------------------------+-----------------------------------------+
-| Hardware threads per node | 128                                     |
+| Hardware threads per node | 192                                     |
 +---------------------------+-----------------------------------------+
-| Clock rate (GHz)          | ~ 2.45                                  |
+| Clock rate (GHz)          | ~ 2.10                                  |
 +---------------------------+-----------------------------------------+
 | RAM (GB)                  | 2,048                                   |
 +---------------------------+-----------------------------------------+
-| Cache (KB) L1/L2/L3       | 64/512/32768                            |
+| Cache (KB) L1/L2/L3       | 105MB                                   |
 +---------------------------+-----------------------------------------+
-| Local storage (TB)        | 1.5 TB                                  |
+| Local storage (TB)        | 3.84 B                                  |
 +---------------------------+-----------------------------------------+
 
 The Intel CPUs are set for 4 NUMA domains per socket (NPS=4).
