@@ -64,7 +64,7 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 | GPU                       | NVIDIA H100                             |
 |                           | (`Vendor                                |
 |                           | page <https://www.nvidia.com/en-u       |
-|                           | s/data-center/h100/>`__) |
+|                           | s/data-center/h100/>`__)                |
 +---------------------------+-----------------------------------------+
 | GPUs per node             | 8                                       |
 +---------------------------+-----------------------------------------+
