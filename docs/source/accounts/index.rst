@@ -3,53 +3,40 @@ Account Administration
 
 Account and Group
 -------------------
+Each user of TGI RAILS must obtain an NCSA account and Duo software token. 
+Each RAILS user will be a member of at least one allocated project which will map
+to a group on the RAILS system. 
 
 Management Tools
 -----------------
-
-Local Identity
-----------------
-
-ACCESS Identity
------------------
-
--  For ACCESS projects please use the `ACCESS user
-   portal <https://support.access-ci.org/>`__ for project and account
-   management.
--  Non-ACCESS Account and Project administration, such as adding a
-   someone to a project, is handled by NCSA Identity and NCSA group
-   management tools. For more information, please see the documentation
-   page.
+You can manage your NCSA identity (change email, password, Duo device, etc) and project PIs
+and allocation managers can add or remove accounts to their project with the
+`NCSA Identity and NCSA group management tools<https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`.
 
 **Configuring Your Account**
 ----------------------------
 
 -  Bash is the default shell, submit a support request to change your
    default shell
--  Environment variables: ACCESS CUE, SLURM batch
+-  Environment variables: SLURM batch
 -  Using Modules
 
 **Allocation Policies**
 -----------------------
 
--  ACCESS awarded projects and allocations should receive periodic
-   messages regarding approaching project expiration.
-
-   -  ACCESS projects are marked for inactivation once it has no valid
-      resource allocation on the system.
-   -  Current ACCESS policy is for user access to be removed for users
-      who are not a member of any active project on Delta.
-
--  Illinois awarded projects and allocations currently do not receive
+-  TGI awarded projects and allocations currently do not receive
    periodic messages regarding approaching project expiration.
 
-   -  Manual notifications are being provided as needed.
-   -  The Delta Project office is working on a process for
-      notifications, project and account inactivation based on
-      expiration dates.
+-  Projects will no longer be able to run jobs after their project expires or their
+   allocation is exhausted.
 
--  There is a 30-day grace-period for expired Delta projects to allow
-   for data management access only..
+-  There is a 30-day grace-period for expired RAILS projects to allow
+   for data management access only.
+   
+-  Following the grace period expired projects will be removed from the system and project data removed.
+   
+-  Any accounts no longer on an active project are removed from the system and their
+   home directory data removed.
 
 Allocation Supplements and Extensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,9 +44,6 @@ Allocation Supplements and Extensions
 Requests for resource allocation supplements (compute, GPU, or
 storage)and extensions can be made via the appropriate XRAS website.
 
--  ACCESS allocation PIs can go to the `ACCESS Manage
-   Allocations <https://allocations.access-ci.org/manage-allocations-overview#h.ii1cvqx8falk>`__
-   page for instructions.
--  NCSA allocation PIs can find instructions for requesting supplements
-   and extensions at the `Delta Allocations
+-  TGI allocation PIs can find instructions for requesting supplements
+   and extensions at the bottom `Delta Allocations
    page. <https://wiki.ncsa.illinois.edu/display/USSPPRT/Delta+Allocations#DeltaAllocations-Requestingan%22Extension%22or%22Supplement%22foranexistingDeltaallocation>`__
