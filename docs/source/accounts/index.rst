@@ -11,7 +11,7 @@ Management Tools
 -----------------
 You can manage your NCSA identity (change email, password, Duo device, etc) and project PIs
 and allocation managers can add or remove accounts to their project with the
-`NCSA Identity and NCSA group management tools<https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`.
+`NCSA Identity and NCSA group management tools <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`_.
 
 **Configuring Your Account**
 ----------------------------
