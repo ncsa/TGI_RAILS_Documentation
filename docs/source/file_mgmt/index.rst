@@ -78,14 +78,11 @@ password prompt for DUO (push to device or passcode from DUO app).
    -  https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/
       (scp, sftp, rsync)
 
--  Globus - to be used for large data transfers.
+-  Globus - to be used for large data transfers including transfering data between file systems.
 
-   Upgrade your Globus Connect Personal
+   If transfering from your own system install Globus Connect Personal (minimum version is 3.2.0)
 
-   Upgrade to at least version 3.2.0 before Dec 12, 2022. See:
-   https://docs.globus.org/ca-update-2022/#notice
-
-   -  Use the Delta collection "**NCSA Delta**".
+   -  Use the TGI RAILS collection "**TGI RAILS**".
    -  
    -  Please see the following documentation on using Globus
 
@@ -98,7 +95,7 @@ Accessing and Transferring Files
 
 .. _small-transfer-tools:
 
-Transferring a Few Small Files With Text Tools
+Transferring a Few Small Files
 -------------------------------------------------
 
 These tools are suitable for a few (typically less than 1000) files and in total less than 100 GB.  If your transfers using these tools take more than 15 minutes, please consider using Globus instead.  
@@ -129,7 +126,7 @@ The output will prompt you for your kerberos password, ask you to initiate a 2FA
 Transferring Many or Large Files With Globus
 ---------------------------------------------
 
-Globus is a web-based file transfer system that works in the background to move files between systems with "Globus Endpoints".  TGI RAILS's Globus endpoint is called "ncsa#TBD".  To transfer files to and from your directories using Globus, you will have to authenticate that endpoint, using your  NCSA username, password, and NCSA account on Duo. 
+Globus is a web-based file transfer system that works in the background to move files between systems with "Globus Endpoints".  TGI RAILS's Globus endpoint is called "TGI RAILS".  To transfer files to and from your directories using Globus, you will have to authenticate that endpoint, using your  NCSA username, password, and NCSA account on Duo. 
 
 One-time Setup
 ~~~~~~~~~~~~~~~~
