@@ -4,13 +4,18 @@ Data Management
 **File Systems**
 ----------------
 
-Each user has a home directory, $HOME, located at /u/$USER.
+Storage on TGI RAILS is split into three types of spaces:
+
+- A user specific home directory, $HOME, located at /u/$USER. One per user with no option
+  for sharing data with other users.
+- Project shared space located at /projects/WXYZ. By default all project group members share 
+  access (and quota) in this space.
+- Job specific scratch space located on each node.
 
 For example, a user (with username auser) who has an allocated project
-with a local project serial code **abcd** will see the following entries
+with a local project serial code **abcd** (a three or four character code) will see the following entries
 in their ``$HOME`` and entries in the project and scratch file systems.
-To determine the mapping of ACCESS project to local project please use
-the ``accounts`` command.
+To determine the project code please use the ``accounts`` command.
 
 Directory access changes can be made using the
 ```facl`` <https://linux.die.net/man/1/setfacl>`__ command. Contact
