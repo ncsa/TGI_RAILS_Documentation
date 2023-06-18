@@ -18,7 +18,7 @@ in their ``$HOME`` and entries in the project and scratch file systems.
 To determine the project code please use the ``accounts`` command.
 
 Directory access changes can be made using the
-```facl`` <https://linux.die.net/man/1/setfacl>`__ command. Contact
+`facl <https://linux.die.net/man/1/setfacl>`_ command. Contact
 help@ncsa.illinois.edu if you need assistance with enabling access to
 specific users and projects.
 
@@ -121,7 +121,7 @@ Now securely copy the file to Hydro using the following command:
 
 :: 
 
-   scp ./my_input_file.dat hirop@TGIRAILS.ncsa.illinois.edu:/u/hirop/input_files/
+   scp ./my_input_file.dat hirop\@TGIRAILS.ncsa.illinois.edu:/u/hirop/input_files/
 
 The output will prompt you for your kerberos password, ask you to initiate a 2FA confirmation (or else ask for a passcode).  If you authentication is successful, it will transfer the file, printing out progress as it does so.
 
