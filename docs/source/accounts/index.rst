@@ -19,7 +19,7 @@ and allocation managers can add or remove accounts to their project with the
 -  Bash is the default shell, submit a support request to change your
    default shell
 -  Environment variables: SLURM batch
--  Using Modules
+-  Using :ref:`module`
 
 **Allocation Policies**
 -----------------------
@@ -46,4 +46,4 @@ storage)and extensions can be made via the appropriate XRAS website.
 
 -  TGI allocation PIs can find instructions for requesting supplements
    and extensions at the bottom `Delta Allocations
-   page. <https://wiki.ncsa.illinois.edu/display/USSPPRT/Delta+Allocations#DeltaAllocations-Requestingan%22Extension%22or%22Supplement%22foranexistingDeltaallocation>`__
+   page. <https://wiki.ncsa.illinois.edu/display/USSPPRT/Delta+Allocations#DeltaAllocations-Requestingan%22Extension%22or%22Supplement%22foranexistingDeltaallocation>`__ While that page documents the process for Delta projects, the process is the same for TGI RAILS projects.
