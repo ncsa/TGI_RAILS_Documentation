@@ -7,7 +7,9 @@ containers are made available (see the container section below) and are
 periodically updated from the NVIDIA NGC site. An automated list of
 available software can be found on the ACCESS website.
 
-modules/lmod lmod
+.. _module:
+
+modules/lmod
 -----------------
 
 Delta provides two sets of modules and a variety of compilers in each
