@@ -62,7 +62,7 @@ filesystems before the job ends.
 
 Transferring Data
 --------------------
-To transfer files to and from the Delta system :
+To transfer files to and from the TGI RAILS system :
 
 GUI apps need to support DUO 2-factor authentication
 
