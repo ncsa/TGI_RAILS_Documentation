@@ -4,29 +4,21 @@ Running Jobs
 Accounting
 -------------------------
 
-The charge unit for *Delta* is the Service Unit (SU). This corresponds
+The charge unit for *TGI RAILS* is the Service Unit (SU). This corresponds
 to the equivalent use of one compute core utilizing less than or equal
-to 2G of memory for one hour, or 1 GPU or fractional GPU using less than
-the corresponding amount of memory or cores for 1 hour (see table
-below). *Keep in mind that your charges are based on the resources that
+to 2G of memory for one hour. *Keep in mind that your charges are based on the resources that
 are reserved for your job and don't necessarily reflect how the
 resources are used.* Charges are based on either the number of cores or
-the fraction of the memory requested, whichever is larger. The minimum
-charge for any job is 1 SU.
+the fraction of the memory requested, whichever is larger.
 
 ========= ============ ======================== ======= =======
 Node Type              Service Unit Equivalence         
 Cores     GPU Fraction Host Memory                      
-CPU Node               1                        N/A     2 GB
-GPU Node  Quad A100    16                       1 A100  62.5 GB
-\         Quad A40     16                       1 A40   62.5 GB
-\         8-way A100   16                       1 A100  250 GB
-\         8-way MI100  16                       1 MI100 250 GB
+CPU core               1                        N/A     2 GB
+CPU Node               96                       N/A     2 GB
+GPU Node  8-way H100   120                      1 H100  62.5 GB
+temp GPU  Quad  A100   40                       1 A100  62.5 GB
 ========= ============ ======================== ======= =======
-
-Please note that a weighting factor will discount the charge for the
-reduced-precision A40 nodes, as well as the novel AMD MI100 based node -
-this will be documented through the ACCESS SU converter.
 
 Local Account Charging
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -44,18 +36,15 @@ and GPU resources.
 
    Project         Description                    Balance (Hours)    Deposited (Hours)
    --------------  ---------------------------  -----------------  -------------------
-   bbka-delta-gpu  ncsa/delta staff allocation            5000000              5000000
-   bbka-delta-cpu  ncsa/delta staff allocation          100000000            100000000 
+   bbka-tgirails   TGI RAILS staff allocation            5000000              5000000
 
 Job Accounting Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  A node-exclusive job that runs on a compute node for one hour will be
-   charged 128 SUs (128 cores x 1 hour)
--  A node-exclusive job that runs on a 4-way GPU node for one hour will
-   be charge 4 SUs (4 GPU x 1 hour)
+   charged 96 SUs (96 cores x 1 hour)
 -  A node-exclusive job that runs on a 8-way GPU node for one hour will
-   be charge 8 SUs (8 GPU x 1 hour)
+   be charge 960 SUs (8 GPU x 1 hour)
 
 QOSGrpBillingMinutes
 ~~~~~~~~~~~~~~~~~~~~
@@ -68,14 +57,13 @@ command, as in
                 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
               1204221       cpu    myjob     .... PD       0:00      5 (QOSGrpBillingMinutes)
 
-then the resource allocation specified for the job (i.e. xyzt-delta-cpu
+then the resource allocation specified for the job (i.e. xyzt-tgirails
 ) does not have sufficient balance to run the job based on the # of
 resources requested and the wallclock time. Sometimes it maybe other
 jobs from the same project that in the same QOSGrpBillingMinutes state
 are could cause other jobs using the same resource allocation that are
 preventing a job that would "fit" from running. The PI of the project
-needs to put in a supplement request using the same XRAS proposal system
-that was used for the current award (ACCESS or NCSA).
+needs to put in a supplement request using the XRAS proposal system.
 
 Reviewing job charges for a project ( jobcharge )
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,7 +126,6 @@ project. Example usage:
 Performance tools
 -----------------
 
--  [was a link to AMDuProf guide wiki page]
 -  [was a link to NVIDIA Nsight Systems wiki page]
 
 Sample Scripts
@@ -154,11 +141,10 @@ Sample Scripts
       #SBATCH --nodes=1
       #SBATCH --ntasks-per-node=1
       #SBATCH --cpus-per-task=4    # <- match to OMP_NUM_THREADS
-      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuH100x8
       #SBATCH --account=account_name
       #SBATCH --job-name=myjobtest
       #SBATCH --time=00:10:00      # hh:mm:ss for the job
-      #SBATCH --constraint="scratch"
       ### GPU options ###
       ##SBATCH --gpus-per-node=2
       ##SBATCH --gpu-bind=none     # <- or closest
@@ -185,11 +171,10 @@ Sample Scripts
       #SBATCH --nodes=2
       #SBATCH --ntasks-per-node=32
       #SBATCH --cpus-per-task=2    # <- match to OMP_NUM_THREADS
-      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuH100x8
       #SBATCH --account=account_name
       #SBATCH --job-name=mympi
       #SBATCH --time=00:10:00      # hh:mm:ss for the job
-      #SBATCH --constraint="scratch"
       ### GPU options ###
       ##SBATCH --gpus-per-node=2
       ##SBATCH --gpu-bind=none     # <- or closest ##SBATCH --mail-user=you@yourinstitution.edu
@@ -214,11 +199,10 @@ Sample Scripts
       #SBATCH --nodes=1
       #SBATCH --ntasks-per-node=1
       #SBATCH --cpus-per-task=32   # <- match to OMP_NUM_THREADS
-      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuH100x8
       #SBATCH --account=account_name
       #SBATCH --job-name=myopenmp
       #SBATCH --time=00:10:00      # hh:mm:ss for the job
-      #SBATCH --constraint="scratch"
       ### GPU options ###
       ##SBATCH --gpus-per-node=2
       ##SBATCH --gpu-bind=none     # <- or closest
@@ -245,11 +229,10 @@ Sample Scripts
       #SBATCH --nodes=2
       #SBATCH --ntasks-per-node=4
       #SBATCH --cpus-per-task=4    # <- match to OMP_NUM_THREADS
-      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+      #SBATCH --partition=cpu      # <- or one of: gpuA100x4 gpuH100x8
       #SBATCH --account=account_name
       #SBATCH --job-name=mympi+x
       #SBATCH --time=00:10:00      # hh:mm:ss for the job
-      #SBATCH --constraint="scratch"
       ### GPU options ###
       ##SBATCH --gpus-per-node=2
       ##SBATCH --gpu-bind=none     # <- or closest
@@ -274,7 +257,7 @@ Sample Scripts
       #!/bin/bash
       #SBATCH --job-name="a.out_symmetric"
       #SBATCH --output="a.out.%j.%N.out"
-      #SBATCH --partition=gpuA100x4
+      #SBATCH --partition=gpuH100x8
       #SBATCH --mem=208G
       #SBATCH --nodes=1
       #SBATCH --ntasks-per-node=4  # could be 1 for py-torch
@@ -282,7 +265,7 @@ Sample Scripts
       #SBATCH --constraint="scratch"
       #SBATCH --gpus-per-node=4
       #SBATCH --gpu-bind=closest   # select a cpu close to gpu on pci bus topology
-      #SBATCH --account=bbjw-delta-gpu
+      #SBATCH --account=bbjw-tgirails
       #SBATCH --exclusive  # dedicated node for this job
       #SBATCH --no-requeue
       #SBATCH -t 04:00:00
@@ -394,14 +377,6 @@ this case an xterm) do the following:
 
 .. _file-system-dependency-specification-for-jobs-1:
 
-File System Dependency Specification for Jobs
----------------------------------------------
-
-Please see the section on setting job file system dependencies for jobs.
-
-Jobs that do not specify a dependency on the WORK(/projects) and SCRATCH
-(/scratch) will be assumed to depend only on the HOME (/u) file system.
-
 Job Management
 -----------------
 
@@ -454,9 +429,9 @@ For example, the following command:
 ::
 
    srun -A account_name --time=00:30:00 --nodes=1 --ntasks-per-node=16 \
-   --partition=gpuA100x4 --gpus=1 --mem=16g --pty /bin/bash
+   --partition=gpuH100x8 --gpus=1 --mem=16g --pty /bin/bash
 
-will run an interactive job in the gpuA100x4 partition with a wall clock
+will run an interactive job in the gpuH100x8 partition with a wall clock
 limit of 30 minutes, using one node and 16 cores per node and 1 gpu. You
 can also use other sbatch options such as those documented above.
 
@@ -532,11 +507,11 @@ See the sbatch man page for additional environment variables available.
 Accessing the Compute Nodes
 -------------------------------
 
-Delta implements the Slurm batch environment to manage access to the
+TGI RAILS implements the Slurm batch environment to manage access to the
 compute nodes. Use the Slurm commands to run batch jobs or for
 interactive access to compute nodes. See:
 https://slurm.schedmd.com/quickstart.html for an introduction to Slurm.
-There are two ways to access compute nodes on Delta.
+There are two ways to access compute nodes on TGI RAILS.
 
 Batch jobs can be used to access compute nodes. Slurm provides a
 convenient direct way to submit batch jobs. See
@@ -548,7 +523,7 @@ see:\ `job_array.html <https://slurm.schedmd.com/job_array.html>`__\ .
 Sample Slurm batch job scripts are provided in the section below.
 
 Direct ssh access to a compute node in a running batch job from a
-dt-loginNN node is enabled, once the job has started.
+loginNN node is enabled, once the job has started.
 
 ::
 
@@ -588,7 +563,7 @@ Default Memory per core 1000 MB
 Default Wallclock time  30 minutes
 ======================= ==========
 
-Table.Delta Production Partitions/Queues
+Table.TGI RAILS Production Partitions/Queues
 
 +----------+----------+----------+----------+----------+----------+
 | **P      | **Node   | **Max    | **Max    | **Max    | **Charge |
@@ -602,48 +577,11 @@ Table.Delta Production Partitions/Queues
 | cpu-int  | CPU      | TBD      | 30 min   | TBD      | 2.0      |
 | eractive |          |          |          |          |          |
 +----------+----------+----------+----------+----------+----------+
-| g        | quad     | TBD      | 48 hr    | TBD      | 1.0      |
-| puA100x4 | A100     |          |          |          |          |
-|          |          |          |          |          |          |
-| gpu      |          |          |          |          |          |
-| A100x4\* |          |          |          |          |          |
-|          |          |          |          |          |          |
-| (        |          |          |          |          |          |
-| asterisk |          |          |          |          |          |
-| i        |          |          |          |          |          |
-| ndicates |          |          |          |          |          |
-| this is  |          |          |          |          |          |
-| the      |          |          |          |          |          |
-| default  |          |          |          |          |          |
-| queue,   |          |          |          |          |          |
-| but      |          |          |          |          |          |
-| submit   |          |          |          |          |          |
-| jobs to  |          |          |          |          |          |
-| gp       |          |          |          |          |          |
-| uA100x4) |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| gpuA1    | q        | TBD      | 1 hr     | TBD      | 2.0      |
-| 00x4-int | uad-A100 |          |          |          |          |
-| eractive |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
 | g        | o        | TBD      | 48 hr    | TBD      | 1.5      |
-| puA100x8 | cta-A100 |          |          |          |          |
+| puH100x8 | cta-H100 |          |          |          |          |
 +----------+----------+----------+----------+----------+----------+
-| gpuA1    | o        | TBD      | 1 hr     | TBD      | 3.0      |
-| 00x8-int | cta-A100 |          |          |          |          |
-| eractive |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| gpuA40x4 | quad-A40 | TBD      | 48 hr    | TBD      | 0.6      |
-+----------+----------+----------+----------+----------+----------+
-| gpuA     | quad-A40 | TBD      | 1 hr     | TBD      | 1.2      |
-| 40x4-int |          |          |          |          |          |
-| eractive |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| gp       | oc       | TBD      | 48 hr    | TBD      | 1.0      |
-| uMI100x8 | ta-MI100 |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| gpuMI1   | oc       | TBD      | 1 hr     | TBD      | 2.0      |
-| 00x8-int | ta-MI100 |          |          |          |          |
+| gpuH1    | o        | TBD      | 1 hr     | TBD      | 3.0      |
+| 00x8-int | cta-H100 |          |          |          |          |
 | eractive |          |          |          |          |          |
 +----------+----------+----------+----------+----------+----------+
 
@@ -661,7 +599,7 @@ or adding the following Slurm options:
 
    --exclusive --mem=0
 
-GPU NVIDIA MIG (GPU slicing) for the A100 will be supported at a future
+GPU NVIDIA MIG (GPU slicing) for the H100 may be supported at a future
 date.
 
 Pre-emptive jobs will be supported at a future date.
@@ -670,7 +608,7 @@ Job Policies
 ----------------
 
 The default job requeue or restart policy is set to not allow jobs to be
-automatically requeued or restarted (as of 12/19/2022).
+automatically requeued or restarted.
 
 To enable automatic requeue and restart of a job by slurm, please add
 the following slurm directive
