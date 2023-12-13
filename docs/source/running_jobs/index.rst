@@ -16,7 +16,8 @@ Node Type              Service Unit Equivalence
 Cores     GPU Fraction Host Memory                      
 CPU core               1                        N/A     2 GB
 CPU Node               96                       N/A     2 GB
-GPU Node  8-way H100   120                      1 H100  62.5 GB
+GPU Node  One H100     120                      1 H100  62.5 GB
+GPU Node  8-way H100   960                      8 H100  62.5 GB
 temp GPU  Quad  A100   40                       1 A100  62.5 GB
 ========= ============ ======================== ======= =======
 
@@ -24,10 +25,8 @@ Local Account Charging
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``accounts`` command to list the accounts available for
-charging. CPU and GPU resources will have individual charge names. For
-example in the following, **``abcd-delta-cpu``** and
-**``abcd-delta-gpu``** are available for user gbauer to use for the CPU
-and GPU resources.
+charging. Users start out with a single chargable project but may
+be added to other projects over time.
 
 ::
 
