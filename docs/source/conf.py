@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'TGI-RAILS User Documentation'
+project = 'TGI RAILS User Documentation'
 copyright = '2023, University of Illinois'
 author = 'NCSA'
 

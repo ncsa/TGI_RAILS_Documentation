@@ -7,7 +7,7 @@ Accessing The System
 Direct access to the TGI RAILS login nodes is via ssh using your NCSA
 username, password and NCSA Duo MFA. Please see page for links to NCSA
 Identity and NCSA Duo services. The login nodes provide access to the
-CPU and GPU resources on TGI-RAILS.
+CPU and GPU resources on TGI RAILS.
 
 +----------------------------------+----------------------------------+
 | login node hostname              | example usage with ssh           |

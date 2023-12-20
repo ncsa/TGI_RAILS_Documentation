@@ -4,7 +4,7 @@ System Architecture
 Compute Nodes
 ----------------------
 
-The TGI-RAILS compute ecosystem is composed of three node types:
+The TGI RAILS compute ecosystem is composed of three node types:
 
 #. Dual-socket CPU-only login nodes
 #. Dual-socket CPU-only compute nodes
@@ -98,12 +98,12 @@ Login nodes provide interactive support for code compilation.
 
 Specialized Nodes
 ---------------------
-TGI-RAILS will support data transfer nodes (serving the "TGI RAILS" Globus
+TGI RAILS will support data transfer nodes (serving the "TGI RAILS" Globus
 collection) and nodes in support of other services.
 
 Network
 ------------
-TGI-RAILS is connected to the NPCF core router & exit infrastructure via two
+TGI RAILS is connected to the NPCF core router & exit infrastructure via two
 100Gbps connections, NCSA's 400Gbps+ of WAN connectivity carry traffic
 to/from users on an optimal peering.
 
