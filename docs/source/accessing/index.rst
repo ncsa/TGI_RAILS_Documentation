@@ -9,31 +9,28 @@ username, password and NCSA Duo MFA. Please see page for links to NCSA
 Identity and NCSA Duo services. The login nodes provide access to the
 CPU and GPU resources on TGI RAILS.
 
-+----------------------------------+----------------------------------+
-| login node hostname              | example usage with ssh           |
-+----------------------------------+----------------------------------+
-| dt                               | ::                               |
-| -login01.delta.ncsa.illinois.edu |                                  |
-|                                  |    ssh -Y username@dt-l          |
-|                                  | ogin01.delta.ncsa.illinois.edu   |
-|                                  |    ( -Y allows X                 |
-|                                  | 11 forwarding from linux hosts ) |
-+----------------------------------+----------------------------------+
-| dt                               | ::                               |
-| -login02.delta.ncsa.illinois.edu |                                  |
-|                                  |    ssh -l username dt            |
-|                                  | -login02.delta.ncsa.illinois.edu |
-|                                  |    ( -l user                     |
-|                                  | name alt. syntax for user@host ) |
-+----------------------------------+----------------------------------+
-| *                                | ::                               |
-| *login.delta.ncsa.illinois.edu** |                                  |
-|                                  |    ssh userna                    |
-| (round robin DNS name for the    | me@login.delta.ncsa.illinois.edu |
-| set of login nodes)              |                                  |
-+----------------------------------+----------------------------------+
++----------------------------------+-----------------------------------------------+
+| login node hostname              | example usage with ssh                        |
++----------------------------------+-----------------------------------------------+
+| railsl1.ncsa.illinois.edu        | ::                                            |
+|                                  |    ssh -Y username@railsl1.ncsa.illinois.edu  |
+|                                  |    ( -Y allows X                              |
+|                                  | 11 forwarding from linux hosts )              |
++----------------------------------+-----------------------------------------------+
+| railsl2.ncsa.illinois.edu        | ::                                            |
+|                                  |    ssh -l username railsl2.ncsa.illinois.edu  |
+|                                  |    ( -l user                                  |
+|                                  | name alt. syntax for user@host )              |
++----------------------------------+-----------------------------------------------+
+| *                                | ::                                            |
+| rails.ncsa.illinois.edu**        |                                               |
+|                                  |    ssh username@rails.ncsa.illinois.edu       |
+| (round robin DNS name for the    |                                               |
+| set of login nodes)              |                                               |
++----------------------------------+-----------------------------------------------+
 
-Please see for the steps to change your NCSA password for direct access
+Please `see <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`_ 
+for the steps to change your NCSA password for direct access
 and set up NCSA DUO. Please contact
 help+tgi@ncsa.illinois.edu for assistance if you do not know your NCSA
 username.
@@ -42,28 +39,20 @@ Use of ssh-key pairs is disabled for general use. Please contact NCSA
 Help at help+tgi@ncsa.illinois.edu for key-pair use by Gateway allocations.
 
 maintaining persistent sessions: tmux
+--------------------------------------
 
 tmux is available on the login nodes to maintain persistent sessions.
 See the tmux man page for more information. Use the targeted login
-hostnames (dt-login01 or dt-login02) to attach to the login node where
+hostnames (railsl1 or railsl2) to attach to the login node where
 you started tmux after making note of the hostname. Avoid the
 round-robin hostname when using tmux.
 
-| 
-
 ssh keyboard-interactive
-
-``For command line ssh clients, make sure to use the following settings if you have trouble logging in to TGI RAILS:``
+--------------------------------------
+For command line ssh clients, make sure to use the following settings if you have trouble logging in to TGI RAILS:
 
 ``ssh -o PreferredAuthentications=keyboard-interactive,password``
 
-An OpenOnDemand shell interface is available at:
-https://openondemand.delta.ncsa.illinois.edu/pun/sys/shell/ssh/dt-login02
-
-
-Logging In 
---------------------
-
 Compute Node External Connectivity
 ---------------------------------------
-
+Compute nodes are able to contact the WAN directly but do not allow incoming connections.
