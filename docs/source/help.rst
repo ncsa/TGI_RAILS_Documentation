@@ -1,7 +1,7 @@
 Getting Help
 ================
 
-For assistance with the use of TGI-RAILS
+For assistance with the use of TGI RAILS
 
 -  For all issues regardless of allocation type, please send email to
    help+tgi@ncsa.illinois.edu.

@@ -1,15 +1,15 @@
 ################################################
-`Taylor Geospatial Institute <https://taylorgeospatial.org>`_ Regional AI Learning System (TGI-RAILS) User Guide
+`Taylor Geospatial Institute <https://taylorgeospatial.org>`_ Regional AI Learning System (TGI RAILS) User Guide
 ################################################
 
-*TGI-RAILS* is coming soon.
+*TGI RAILS* is coming soon.
 
 System status, planned outages, and maintenance info:
 
 Introduction
 =================
 
-*TGI-RAILS* is a regional computing system funded by the NSF Campus Cyberinfrastructure program for primary use by the TGI consortium for geospatial related research. RAILS provides a highly capable GPU-focused compute environment for GPU and CPU workloads.
+*TGI RAILS* is a regional computing system funded by the NSF Campus Cyberinfrastructure program for primary use by the TGI consortium for geospatial related research. RAILS provides a highly capable GPU-focused compute environment for GPU and CPU workloads.
 
 RAILS has three CPU-only nodes and three 8-way NVIDIA H100-based GPU nodes.  Every RAILS node has high-performance node-local SSD storage (1.92 TB for CPU nodes, 3.5 TB for GPU nodes), and is connected to the 1 PB VAST filesystem via the high-speed interconnect.  The RAILS resource uses the SLURM workload manager for job scheduling.  
 
