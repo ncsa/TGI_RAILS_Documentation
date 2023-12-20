@@ -1,3 +1,12 @@
+Requesting a Project
+========================
+Faculty and staff at TGI institutions are eligible to request allocations on the TGI RAILS system.
+To submit a proposal for a project the PI must have an NCSA account. If you do not have an NCSA
+account please use this `link <https://identity.ncsa.illinois.edu/join/AMY7RSDDWP>` to request 
+an account. Once your NCSA is setup you can submit a proposal using the `NCSA XRAS interface. 
+<https://xras-submit.ncsa.illinois.edu/opportunities/532814/requests/new>` The proposal will need to include a title, a short abstract suitable for posting on public web sites, the TGI institution, a statement of the project goals and an estimate of allocation needed.
+After submission the proposal will be reviewed by a reviewer designated by TGI and once approved, the project will be created in the NCSA management systems and on TGI RAILS. Please note that these last two steps do involve some manual steps which can take up to five business days to complete (depending on staff availability).
+
 Account Administration
 ========================
 
