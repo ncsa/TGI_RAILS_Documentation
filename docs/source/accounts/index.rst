@@ -4,7 +4,7 @@ Allocation and Account Administration
 Requesting an Allocation
 -------------------
 
-Faculty and staff at TGI institutions are eligible to request allocations on the TGI RAILS system.
+**Faculty and staff at TGI institutions** are eligible to request allocations on the TGI RAILS system.
 To submit a proposal for a project the PI must have an NCSA account. If you do not have an NCSA
 account please use this `link <https://identity.ncsa.illinois.edu/join/AMY7RSDDWP>`_ to request 
 an account. Once your NCSA is setup you can submit a proposal using the `NCSA XRAS interface. 
