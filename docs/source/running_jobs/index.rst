@@ -14,11 +14,11 @@ the fraction of the memory requested, whichever is larger.
 ========= ============ ======================== ======= =======
 Node Type              Service Unit Equivalence         
 Cores     GPU Fraction Host Memory                      
-CPU core               1                        N/A     2 GB
-CPU Node               96                       N/A     2 GB
-GPU Node  One H100     120                      1 H100  62.5 GB
-GPU Node  8-way H100   960                      8 H100  62.5 GB
-temp GPU  Quad  A100   40                       1 A100  62.5 GB
+CPU core               1                        N/A     5.3 GB
+CPU Node               96                       N/A     512 GB
+GPU Node  One H100     120                      1 H100  256 GB
+GPU Node  8-way H100   960                      8 H100  2048 GB
+temp GPU  Quad  A100   40                       1 A100  256 GB
 ========= ============ ======================== ======= =======
 
 Local Account Charging
