@@ -8,9 +8,9 @@ The TGI RAILS compute ecosystem is composed of three node types:
 
 #. Dual-socket CPU-only login nodes
 #. Dual-socket CPU-only compute nodes
-#. Dual-socket 8-way NVIDIA H100 GPU compute nodes (delayed, A100 nodes avaialble temporarily)
+#. Dual-socket 8-way NVIDIA H100 GPU compute nodes
 
-All processors are Intel Sapphire Rapids CPUs.
+All processors are Intel Sapphire Rapids CPUs and all have hardware multithreading turned on.
 
 Table. Login Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,10 +88,9 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 +---------------------------+-----------------------------------------+
 | Cache (KB) L1/L2/L3       | 105MB                                   |
 +---------------------------+-----------------------------------------+
-| Local storage (TB)        | 3.84 B                                  |
+| Local storage (TB)        | 3.84 TB                                 |
 +---------------------------+-----------------------------------------+
 
-The Intel CPUs are set for 4 NUMA domains per socket (NPS=4).
 Login Nodes
 --------------
 Login nodes provide interactive support for code compilation.
@@ -153,9 +152,9 @@ WORK=/projects/<account>/$USER .
 |             |             |             |             | etc.        |
 |             |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-| /tmp        | **0.74      | No          | After each  | Locally     |
+| /tmp        | **1.92      | No          | After each  | Locally     |
 |             | (CPU) or    |             | job         | attached    |
-|             | 1.50 TB     |             |             | disk for    |
+|             | 3.84 TB     |             |             | disk for    |
 |             | (GPU)**     |             |             | fast small  |
 |             | shared or   |             |             | file IO.    |
 |             | dedicated   |             |             |             |
@@ -169,29 +168,4 @@ WORK=/projects/<account>/$USER .
 
 quota usage
            
-
-The **quota** command allows you to view your use of the file systems
-and use by your projects. Below is a sample output for a person "user"
-who is in two projects: aaaa, and bbbb. The home directory quota does
-not depend on which project group the file is written with.
-
-::
-
-   @dt-login01 ~]$ quota
-   Quota usage for user :
-   -------------------------------------------------------------------------------------------
-   | Directory Path | User | User | User  | User | User   | User |
-   |                | Block| Soft | Hard  | File | Soft   | Hard |
-   |                | Used | Quota| Limit | Used | Quota  | Limit|
-   --------------------------------------------------------------------------------------
-   | /u/      | 20k  | 25G  | 27.5G | 5    | 300000 | 330000 |
-   --------------------------------------------------------------------------------------
-   Quota usage for groups user  is a member of:
-   -------------------------------------------------------------------------------------
-   | Directory Path | Group | Group | Group | Group | Group  | Group |
-   |                | Block | Soft  | Hard  | File  | Soft   | Hard  |
-   |                | Used  | Quota | Limit | Used  | Quota  | Limit |
-   -------------------------------------------------------------------------------------------
-   | /projects/aaaa | 8k    | 500G  | 550G  | 2     | 300000 | 330000 |
-   | /projects/bbbb | 24k   | 500G  | 550G  | 6     | 300000 | 330000 |
-   ------------------------------------------------------------------------------------------
+The storage system does enforce quotas. Details on querying quotas and storage usage will be posted soon.
