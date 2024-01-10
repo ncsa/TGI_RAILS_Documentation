@@ -17,7 +17,6 @@ CPU core               1                        N/A     5.3 GB
 CPU Node               96                       N/A     512 GB
 GPU Node  One H100     120                      1 H100  256 GB
 GPU Node  8-way H100   960                      8 H100  2048 GB
-temp GPU  Quad  A100   40                       1 A100  256 GB
 ========= ============ ======================== ======= ===========
 
 Local Account Charging
