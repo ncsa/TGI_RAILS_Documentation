@@ -5,7 +5,7 @@ Accessing The System
 -----------------------------
 
 Direct access to the TGI RAILS login nodes is via ssh using your NCSA
-username, password and NCSA Duo MFA. Please see page for links to NCSA
+username, password and NCSA Duo MFA. Please see this `page <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`_ for links to NCSA
 Identity and NCSA Duo services. The login nodes provide access to the
 CPU and GPU resources on TGI RAILS.
 
@@ -22,17 +22,14 @@ CPU and GPU resources on TGI RAILS.
 |                                  |    ( -l user                                  |
 |                                  | name alt. syntax for user@host )              |
 +----------------------------------+-----------------------------------------------+
-| *                                | ::                                            |
-| rails.ncsa.illinois.edu**        |                                               |
+| Preferred host:                  | ::                                            | 
+| rails.ncsa.illinois.edu          |                                               |
 |                                  |    ssh username@rails.ncsa.illinois.edu       |
 | (round robin DNS name for the    |                                               |
 | set of login nodes)              |                                               |
 +----------------------------------+-----------------------------------------------+
 
-Please `see <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`_ 
-for the steps to change your NCSA password for direct access
-and set up NCSA DUO. Please contact
-help+tgi@ncsa.illinois.edu for assistance if you do not know your NCSA
+Contact help+tgi@ncsa.illinois.edu for assistance if you do not know your NCSA
 username.
 
 Use of ssh-key pairs is disabled for general use. Please contact NCSA
