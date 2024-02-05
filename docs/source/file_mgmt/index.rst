@@ -28,21 +28,21 @@ specific users and projects.
    drwxrwx---+ 12 root root 12345 Feb 21 11:54 /u/$USER
 
    $ ls -ld /projects/abcd
-   drwxrws---+  45 root   delta_abcd      4096 Feb 21 11:54 /projects/abcd
+   drwxrws---+  45 root   tgirails_abcd      4096 Feb 21 11:54 /projects/abcd
 
    $ ls -l /projects/abcd
    total 0
-   drwxrws---+ 2 auser delta_abcd 6 Feb 21 11:54 auser
-   drwxrws---+ 2 buser delta_abcd 6 Feb 21 11:54 buser
+   drwxrws---+ 2 auser tgirails_abcd 6 Feb 21 11:54 auser
+   drwxrws---+ 2 buser tgirails_abcd 6 Feb 21 11:54 buser
    ...
 
    $ ls -ld /scratch/abcd
-   drwxrws---+  45 root   delta_abcd      4096 Feb 21 11:54 /scratch/abcd
+   drwxrws---+  45 root   tgirails_abcd      4096 Feb 21 11:54 /scratch/abcd
 
    $ ls -l /scratch/abcd
    total 0
-   drwxrws---+ 2 auser delta_abcd 6 Feb 21 11:54 auser
-   drwxrws---+ 2 buser delta_abcd 6 Feb 21 11:54 buser
+   drwxrws---+ 2 auser tgirails_abcd 6 Feb 21 11:54 auser
+   drwxrws---+ 2 buser tgirails_abcd 6 Feb 21 11:54 buser
    ...
 
 To avoid issues when file systems become unstable or non-responsive, we
@@ -75,10 +75,10 @@ password prompt for DUO (push to device or passcode from DUO app).
 | 
 
 -  scp - to be used for small to modest transfers to avoid impacting the
-   usability of the Delta login node (*login.delta.ncsa.illinois.edu*).
+   usability of the RAILS login node (*rails.ncsa.illinois.edu*).
 
 -  rsync - to be used for small to modest transfers to avoid impacting
-   the usability of the Delta login node.
+   the usability of the RAILS login node.
 
    -  https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/
       (scp, sftp, rsync)
@@ -88,7 +88,6 @@ password prompt for DUO (push to device or passcode from DUO app).
    If transfering from your own system install Globus Connect Personal (minimum version is 3.2.0)
 
    -  Use the TGI RAILS collection "**TGI RAILS**".
-   -  
    -  Please see the following documentation on using Globus
 
       -  https://docs.globus.org/how-to/get-started/
@@ -121,7 +120,7 @@ Now securely copy the file to Hydro using the following command:
 
 :: 
 
-   scp ./my_input_file.dat hirop@TGIRAILS.ncsa.illinois.edu:/u/hirop/input_files/
+   scp ./my_input_file.dat hirop@rails.ncsa.illinois.edu:/u/hirop/input_files/
 
 The output will prompt you for your kerberos password, ask you to initiate a 2FA confirmation (or else ask for a passcode).  If you authentication is successful, it will transfer the file, printing out progress as it does so.
 
@@ -148,3 +147,6 @@ Access Controls
 
 Quotas and Policies
 ---------------------
+/u/$HOME (unshared space, 5TB default quota)
+
+/projects/WXYZ (project shared space, 50TB default quota)
