@@ -49,7 +49,7 @@ and allocation managers can add or remove accounts to their project with the
 -  Projects will no longer be able to run jobs after their project expires or their
    allocation is exhausted.
 
--  There is a 30-day grace-period for expired RAILS projects to allow
+-  There is a 0-day grace-period for expired RAILS projects to allow
    for data management access only.
    
 -  Following the grace period expired projects will be removed from the system and project data removed.
@@ -64,5 +64,5 @@ Requests for resource allocation supplements (compute, GPU, or
 storage)and extensions can be made via the appropriate XRAS website.
 
 -  TGI allocation PIs can find instructions for requesting supplements
-   and extensions at the bottom `Delta Allocations
+   and extensions at the bottom of the `Delta Allocations
    page. <https://wiki.ncsa.illinois.edu/display/USSPPRT/Delta+Allocations#DeltaAllocations-Requestingan%22Extension%22or%22Supplement%22foranexistingDeltaallocation>`__ While that page documents the process for Delta projects, the process is the same for TGI RAILS projects.
