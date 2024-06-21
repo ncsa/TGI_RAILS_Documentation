@@ -133,4 +133,3 @@ will review requests for broad use and installation effort.
    :hidden:
 
    R/index
-   
