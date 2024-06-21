@@ -123,6 +123,7 @@ will review requests for broad use and installation effort.
 
 Python
 -------------------------
+
 .. toctree::
    :caption: Python
    :hidden:
@@ -133,6 +134,7 @@ Python
 
 R
 -------------------------
+
 .. toctree::
    :caption: R
    :hidden:
