@@ -138,5 +138,6 @@ R
 .. toctree::
    :caption: R
    :hidden:
+
    R/index
    
