@@ -123,15 +123,13 @@ will review requests for broad use and installation effort.
 
 Python
 -------------------------
-
+   python/index
+   python_env/index
 
 
 R
 -------------------------
-.. toctree::
-   :maxdepth: 2
-   
-   python/index
-   python_env/index
    R/index
    
+.. toctree::
+   :maxdepth: 2
