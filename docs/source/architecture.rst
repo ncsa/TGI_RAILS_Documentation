@@ -70,7 +70,7 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 +---------------------------+-----------------------------------------+
 | GPU Memory (GB)           | 80                                      |
 +---------------------------+-----------------------------------------+
-| CPU                       | Intel Sapphire Rapids                   |
+| CPU                       | Intel Sapphire Rapids 8468              |
 +---------------------------+-----------------------------------------+
 | CPU sockets per node      | 2                                       |
 +---------------------------+-----------------------------------------+
@@ -93,7 +93,7 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 
 Login Nodes
 --------------
-Login nodes provide interactive support for code compilation.
+Login nodes provide interactive support for code editing and compilation.
 
 Specialized Nodes
 ---------------------
@@ -106,7 +106,7 @@ TGI RAILS is connected to the NPCF core router & exit infrastructure via two
 100Gbps connections, NCSA's 400Gbps+ of WAN connectivity carry traffic
 to/from users on an optimal peering.
 
-TGI-RAILs resources are inter-connected with 100Gbps Ethernet.
+TGI-RAILS resources are inter-connected with 100Gbps Ethernet.
 
 File Systems
 ---------------
