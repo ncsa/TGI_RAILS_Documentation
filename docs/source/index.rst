@@ -2,7 +2,7 @@
 `Taylor Geospatial Institute <https://taylorgeospatial.org>`_ Regional AI Learning System (TGI RAILS) User Guide
 ################################################
 
-System status, planned outages, and maintenance info:
+System status, planned outages, and maintenance information:
 
 Introduction
 =================
