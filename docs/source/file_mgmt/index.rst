@@ -116,7 +116,7 @@ As an example, you want to move a file called "my_input_file.dat" from your loca
    $ ls
    my_input_file.dat
    
-Now securely copy the file to Hydro using the following command: 
+Now securely copy the file to TGI RAILS using the following command: 
 
 :: 
 
