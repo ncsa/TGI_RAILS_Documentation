@@ -123,13 +123,11 @@ will review requests for broad use and installation effort.
 
 .. toctree::
    :caption: Python
-   :hidden:
 
    python/index
    python_env/index
 
 .. toctree::
    :caption: R
-   :hidden:
 
    R/index
