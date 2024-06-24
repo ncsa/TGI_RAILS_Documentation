@@ -121,11 +121,17 @@ documented <here>. Delta support staff are available to provide limited
 assistance. For general installation requests the Delta project office
 will review requests for broad use and installation effort.
 
+Python
+--------
+
 .. toctree::
    :caption: Python
 
    python/index
    python_env/index
+
+R
+---
 
 .. toctree::
    :caption: R
