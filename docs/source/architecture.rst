@@ -47,7 +47,7 @@ Hardware threads per core 2
 Hardware threads per node 192
 Clock rate (GHz)          ~ 2.10
 RAM (GB)                  512
-Cache (KB) L1/L2/L3       105MB
+Cache L1/L2/L3            80KB (p/core) / 2MB (p/core) / 105MB (shared)
 Local storage (TB)        1.92 TB
 ========================= ===================
 
@@ -86,7 +86,7 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 +---------------------------+-----------------------------------------+
 | RAM (GB)                  | 2,048                                   |
 +---------------------------+-----------------------------------------+
-| Cache (KB) L1/L2/L3       | 105MB                                   |
+| Cache L1/L2/L3            | 80KB(p/core)/ 2MB(p/core)/ 105MB(shared)|
 +---------------------------+-----------------------------------------+
 | Local storage (TB)        | 3.84 TB                                 |
 +---------------------------+-----------------------------------------+
