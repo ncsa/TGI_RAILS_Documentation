@@ -104,11 +104,11 @@ Transferring a Few Small Files
 
 These tools are suitable for a few (typically less than 1000) files and in total less than 100 GB.  If your transfers using these tools take more than 15 minutes, please consider using Globus instead.  
 
-If you use a Windows machine, you can transfer files back and forth between your machine and Hydro using an application called "WinSCP".  You'll have to download it and install it.  When open WinSCP, you'll need to log into the Hydro login node as your "remote" node, using your username, password, and 2FA as usual.  Once you've logged in, WinSCP will work like a drag and drop interface for moving files.  
+If you use a Windows machine, you can transfer files back and forth between your machine and TGI RAILS using an application called "WinSCP".  You'll have to download it and install it.  When you open WinSCP, you'll need to log into the TGI RAILS login node as your "remote" node, using your username, password, and 2FA as usual.  Once you've logged in, WinSCP will work like a drag and drop interface for moving files.  
 
-The program Secure CoPy (SCP) can be used to securely transfer files between Hydro and other systems.  SCP is built into all Mac and most Windows computers.  You can find tutorials online for using scp.  The important thing you need to know is the full pathname of the file(s) that you're wanting to move on the machine where they're coming from, *and* the full pathname of where you want the files to go.
+The program Secure CoPy (SCP) can be used to securely transfer files between TGI RAILS and other systems.  SCP is built into all Mac and most Windows computers.  You can find tutorials online for using SCP.  The important thing you need to know is the full pathname of the file(s) that you're wanting to move on the machine where they're coming from, *and* the full pathname of where you want the files to go.
 
-As an example, you want to move a file called "my_input_file.dat" from your local computer to TGI RAILS.  You want to put it in a directory on TGI RAILS which is "/u/hirop/input_files".  First, open a terminal or command prompt.  Change directories to where the file is, so that if you run the "ls" command, the file you want to transfer is listed.  
+As an example, you want to move a file called "my_input_file.dat" from your local computer to TGI RAILS.  You want to put it in a directory on TGI RAILS which is "/u/auser/input_files".  First, open a terminal or command prompt.  Change directories to where the file is, so that if you run the "ls" command, the file you want to transfer is listed.  
 
 :: 
 
@@ -120,7 +120,7 @@ Now securely copy the file to Hydro using the following command:
 
 :: 
 
-   scp ./my_input_file.dat hirop@rails.ncsa.illinois.edu:/u/hirop/input_files/
+   scp ./my_input_file.dat auser@rails.ncsa.illinois.edu:/u/auser/input_files/
 
 The output will prompt you for your kerberos password, ask you to initiate a 2FA confirmation (or else ask for a passcode).  If you authentication is successful, it will transfer the file, printing out progress as it does so.
 
