@@ -79,13 +79,13 @@ OpenMP
 To build an OpenMP program, use the -fopenmp /-mp option:
 
 +----------------------+----------------------+----------------------+
-| gcc                  | aocc                 | nvhpc                |
+| GNU                  | Intel                | NVIDIA               |
 +----------------------+----------------------+----------------------+
-| gfortran -fopenmp    | flang -fopenmp       | nvfortran -mp        |
+| gfortran -fopenmp    | ifort -fopenmp       | nvfortran -mp        |
 | *myprog*.f           | *myprog*.f           | *myprog*.f           |
-| gcc -fopenmp         | clang -fopenmp       | nvc -mp *myprog*.c   |
+| gcc -fopenmp         | icc -fopenmp         | nvc -mp *myprog*.c   |
 | *myprog*.c           | *myprog*.c           | nvc++ -mp            |
-| g++ -fopenmp         | clang -fopenmp       | *myprog*.cc          |
+| g++ -fopenmp         | icpc -fopenmp        | *myprog*.cc          |
 | *myprog*.cc          | *myprog*.cc          |                      |
 +----------------------+----------------------+----------------------+
 
@@ -96,7 +96,7 @@ To build an MPI/OpenMP hybrid program, use the -fopenmp / -mp option
 with the MPI compiling commands:
 
 ============================ =======================
-GCC                            PGI/NVHPC
+GNU                            NVIDIA
 mpif77 -fopenmp *myprog*.f     mpif77 -mp *myprog*.f
 mpif90 -fopenmp *myprog*.f90   mpif90 -mp *myprog*.f90
 mpicc -fopenmp *myprog*.c      mpicc -mp *myprog*.c
