@@ -6,11 +6,11 @@ and NVIDIA HPC compilers.
 
 Modules provide access to the compiler + MPI environment.
 
-The default environment includes the GCC 11.2.0 compiler + OpenMPI with
+The default environment includes the GCC compiler + OpenMPI with
 support for cuda and gdrcopy. nvcc is in the cuda module and is loaded
 by default.
 
-Recommended compiler flags for GNU, and Intel compilers for
+Recommended compiler flags for GNU and Intel compilers for
 Sapphire Rapids processors include "-march=sapphirerapids -mtune=sapphirerapids"
 when using GCC and "-xsapphirerapids" with the Intel compiler. Both are recommended
 to optimize at the -O3 or -Ofast level.
@@ -28,10 +28,10 @@ Serial
 To build (compile and link) a serial program in Fortran, C, and C++:
 
 =================== ================= ====================
-gcc                 aocc              nvhpc
-gfortran *myprog*.f flang *myprog*.f  nvfortran *myprog*.f
-gcc *myprog*.c      clang *myprog*.c  nvc *myprog*.c
-g++ *myprog*.cc     clang *myprog*.cc nvc++ *myprog*.cc
+GNU                 Intel             NVIDIA
+gfortran *myprog*.f ifort *myprog*.f  nvfortran *myprog*.f
+gcc *myprog*.c      icc *myprog*.c    nvc *myprog*.c
+g++ *myprog*.cc     icpc *myprog*.cc  nvc++ *myprog*.cc
 =================== ================= ====================
 
 MPI
