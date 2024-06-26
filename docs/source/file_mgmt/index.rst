@@ -12,7 +12,7 @@ Storage on TGI RAILS is split into three types of spaces:
   access (and quota) in this space.
 - Job specific temporary space located on each node during execution of the job.
 
-For example, a user (with username auser) who has an allocated project
+For example, a user (with username **auser**) who has an allocated project
 with a local project serial code **abcd** (a three or four character code) will see the entries shown below
 in their ``$HOME`` and in the /projects file systems.
 To determine the project code please use the ``accounts`` command.
