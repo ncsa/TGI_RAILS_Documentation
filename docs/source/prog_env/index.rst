@@ -128,7 +128,7 @@ To build an MPI/OpenMP hybrid program, use the -fopenmp / -mp option
 with the MPI compiling commands:
 
 ============================ =======================
-GNU                            NVIDIA 
+GNU, Intel                     NVIDIA 
 mpif77 -fopenmp *myprog*.f     mpif77 -mp *myprog*.f
 mpif90 -fopenmp *myprog*.f90   mpif90 -mp *myprog*.f90
 mpicc -fopenmp *myprog*.c      mpicc -mp *myprog*.c
