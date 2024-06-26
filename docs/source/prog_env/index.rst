@@ -81,39 +81,14 @@ g++ *myprog*.cc     icpc *myprog*.cc  nvc++ *myprog*.cc
 
 MPI Programs
 -------------------------
-To build (compile and link) a MPI program in Fortran, C, and C++:
+To build (compile and link) an MPI program, use the ``mpicc``, ``mpiCC``, ``mpif77`` or ``mpif90`` compiler wrappers to automatically include the OpenMPI libraries.
 
-+----------------------+----------------------+----------------------+
-| MPI Implementation   | modulefiles for      | Build Commands       |
-|                      | MPI/Compiler         |                      |
-+----------------------+----------------------+----------------------+
-| |                    | ::                   | |                    |
-|                      |                      |                      |
-| | OpenMPI            |                      | +-------+-------+    |
-| | (`Home             |                      | | Fo    | m     |    |
-|   Page <http://w     |                      | | rtran | pif77 |    |
-| ww.open-mpi.org/>`__ |                      | | 77:   | *mypr |    |
-|   /                  |                      | |       | og*.f |    |
-|   `Document          |   gcc/11.2.0 openmpi | +-------+-------+    |
-| ation <http://www.op |                      | | Fo    | m     |    |
-| en-mpi.org/doc/>`__) |                      | | rtran | pif90 |    |
-|                      |                      | | 90:   | *m    |    |
-|                      |   nvhpc/22.2 openmpi | |       | yprog |    |
-|                      |                      | |       | *.f90 |    |
-|                      |                      | +-------+-------+    |
-|                      |    intel-oneapi      | | C:    | mpicc |    |
-|                      | -compilers/2022.0.2  | |       | *mypr |    |
-|                      |    openmpi           | |       | og*.c |    |
-|                      |                      | +-------+-------+    |
-|                      |                      | | C++:  | m     |    |
-|                      |                      | |       | pic++ |    |
-|                      |                      | |       | *     |    |
-|                      |                      | |       | mypro |    |
-|                      |                      | |       | g*.cc |    |
-|                      |                      | +-------+-------+    |
-|                      |                      |                      |
-|                      |                      | |                    |
-+----------------------+----------------------+----------------------+
+For example:
+
+.. code-block::
+
+   mpicc -o mpi_hello mpi_hello.c
+
 
 Python
 -------------------------
