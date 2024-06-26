@@ -39,14 +39,14 @@ To avoid issues when file systems become unstable or non-responsive, we
 recommend not putting symbolic links from $HOME to the project and
 scratch spaces.
 
-/tmp on compute nodes (job duration)
+/tmp on compute nodes (job duration):
 
 The high performance ssd storage (740GB cpu, 1.5TB gpu) is available in
-/tmp (*unique to each node and job–not a shared filesystem*) and may
+/tmp (*unique to each node and job – not a shared filesystem*) and may
 contain less than the expected free space if the node(s) are running
 multiple jobs. Codes that need to perform I/O to many small files should
 target /tmp on each node of the job and save results to other
-filesystems before the job ends.
+filesystems before the job ends, paying attention to avoid filename collisions.
 
 Transferring Data
 --------------------
