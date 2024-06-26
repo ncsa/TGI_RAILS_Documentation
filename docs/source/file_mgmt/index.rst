@@ -10,16 +10,16 @@ Storage on TGI RAILS is split into three types of spaces:
   for sharing data with other users.
 - Project shared space located at /projects/WXYZ. By default all project group members share 
   access (and quota) in this space.
-- Job specific scratch space located on each node.
+- Job specific temporary space located on each node during execution of the job.
 
 For example, a user (with username auser) who has an allocated project
-with a local project serial code **abcd** (a three or four character code) will see the following entries
-in their ``$HOME`` and entries in the project and scratch file systems.
+with a local project serial code **abcd** (a three or four character code) will see the entries shown below
+in their ``$HOME`` and in the /projects file systems.
 To determine the project code please use the ``accounts`` command.
 
 Directory access changes can be made using the
 `facl <https://linux.die.net/man/1/setfacl>`_ command. Contact
-help@ncsa.illinois.edu if you need assistance with enabling access to
+help+tgi@ncsa.illinois.edu if you need assistance with enabling access to
 specific users and projects.
 
 ::
@@ -34,29 +34,17 @@ specific users and projects.
    total 0
    drwxrws---+ 2 auser tgirails_abcd 6 Feb 21 11:54 auser
    drwxrws---+ 2 buser tgirails_abcd 6 Feb 21 11:54 buser
-   ...
-
-   $ ls -ld /scratch/abcd
-   drwxrws---+  45 root   tgirails_abcd      4096 Feb 21 11:54 /scratch/abcd
-
-   $ ls -l /scratch/abcd
-   total 0
-   drwxrws---+ 2 auser tgirails_abcd 6 Feb 21 11:54 auser
-   drwxrws---+ 2 buser tgirails_abcd 6 Feb 21 11:54 buser
-   ...
-
+  
 To avoid issues when file systems become unstable or non-responsive, we
 recommend not putting symbolic links from $HOME to the project and
 scratch spaces.
-
-| 
 
 /tmp on compute nodes (job duration)
 
 The high performance ssd storage (740GB cpu, 1.5TB gpu) is available in
 /tmp (*unique to each node and job–not a shared filesystem*) and may
 contain less than the expected free space if the node(s) are running
-multiple jobs. Codes that need to perform i/o to many small files should
+multiple jobs. Codes that need to perform I/O to many small files should
 target /tmp on each node of the job and save results to other
 filesystems before the job ends.
 
