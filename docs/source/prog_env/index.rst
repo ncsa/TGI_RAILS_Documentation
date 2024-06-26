@@ -12,7 +12,7 @@ by default.
 
 Recommended compiler flags for GNU and Intel compilers for
 Sapphire Rapids processors include "-march=sapphirerapids -mtune=sapphirerapids"
-when using GCC and "-xsapphirerapids" with the Intel compiler. Both are recommended
+when using GNU and "-xsapphirerapids" with the Intel compiler. Both are recommended
 to optimize at the -O3 or -Ofast level.
 
 
@@ -112,18 +112,14 @@ View the python packages installed in this environment using ``pip3 list``
 OpenMP Programs
 -------------------------
 
-To build an OpenMP program, use the -fopenmp /-mp option:
+To build an OpenMP program, use the -fopenmp/-mp option:
 
-+----------------------+----------------------+----------------------+
-| GNU                  | Intel                | NVIDIA               |
-+----------------------+----------------------+----------------------+
-| gfortran -fopenmp    | ifort -fopenmp       | nvfortran -mp        |
-| *myprog*.f           | *myprog*.f           | *myprog*.f           |
-| gcc -fopenmp         | icc -fopenmp         | nvc -mp *myprog*.c   |
-| *myprog*.c           | *myprog*.c           | nvc++ -mp            |
-| g++ -fopenmp         | icpc -fopenmp        | *myprog*.cc          |
-| *myprog*.cc          | *myprog*.cc          |                      |
-+----------------------+----------------------+----------------------+
+============================= ========================== ===========================
+GNU                            Intel                      NVIDIA
+gfortran -fopenmp *myprog*.f   ifort -fopenmp *myprog*.f  nvfortran -mp *myprog*.f
+gcc -fopenmp *myprog*.c        icc -fopenmp *myprog*.c    nvc -mp *myprog*.c 
+g++ -fopenmp *myprog*.cc       icpc -fopenmp *myprog*.cc  nvc++ -mp *myprog*.cc
+============================= ========================== ===========================
 
 Hybrid MPI/OpenMP Programs
 -------------------
