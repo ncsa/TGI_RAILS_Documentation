@@ -36,8 +36,7 @@ specific users and projects.
    drwxrws---+ 2 buser tgirails_abcd 6 Feb 21 11:54 buser
   
 To avoid issues when file systems become unstable or non-responsive, we
-recommend not putting symbolic links from $HOME to the project and
-scratch spaces.
+recommend not putting symbolic links from $HOME to the /projects space.
 
 /tmp on compute nodes (job duration):
 
