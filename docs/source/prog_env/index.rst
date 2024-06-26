@@ -19,6 +19,51 @@ to optimize at the -O3 or -Ofast level.
 Modules
 -------------------------
 
+The user environment is controlled using the modules environment management system. 
+Modules may be loaded, unloaded, or swapped either on a command line or in your **$HOME/.bashrc** (**.cshrc** for csh ) shell startup file.
+
+The ``module`` command is a user interface to the Lmod package. 
+The `Lmod package <https://lmod.readthedocs.io/en/latest/010_user.html>`_ provides for the dynamic modification of the user’s environment via **modulefiles** (a modulefile contains the information needed to configure the shell for an application). 
+Modules are independent of the user’s shell, so both **tcsh** and **bash** users can use the same commands to change the environment.
+
+.. table:: Useful Module Commands
+
+   =========================================== ==========================
+   Command                                     Description                      
+   =========================================== ==========================
+   ``module avail``                            lists all available modules      
+   ``module list``                             lists currently loaded modules
+   ``module avail | more``		           display the available modules on the system one page at a time
+   ``module spider foo``                       search for modules named **foo**     
+   ``module help modulefile``                  help on module **modulefile**        
+   ``module display modulefile``               display information about **modulefile**      
+   ``module load modulefile``                  load **modulefile** into current shell environment     
+   ``module unload modulefile``                remove **modulefile** from current shell environment  
+   ``module swap modulefile1 modulefile2``     unload **modulefile1** and load **modulefile2**  
+   =========================================== ==========================
+
+**To include a particular software stack in your default environment for TGI RAILS login and compute nodes:**
+
+  #. Log into a TGI RAILS login node. 
+  #. Manipulate your modulefile stack until satisfied. 
+  #. Run ``module save``; this will create a **.lmod.d/default** file that will be loaded on the TGI RAILS login or compute nodes on your next login or job execution.
+
+.. table:: Useful User Defined Module Collections
+
+   ==================================== =======================
+   Command                              Description                      
+   ==================================== =======================
+   ``module save``                      save current modulefile stack to **~/.lmod.d/default** 
+   ``module save collection_name``      save current modulefile stack to **~/.lmod.d/collection_name**
+   ``module restore``                   load **~/.lmod.d/default** if it exists or System default    
+   ``module restore collection_name``   load your **~/.lmod.d/collection_name**                       
+   ``module reset``                     reset your modulefiles to System default 
+   ``module disable collection_name``   disable **collection_name** by adding **collection_name~**      
+   ``module savelist``                  list all your **~/.lmod.d/collections**                   
+   ``module describe collection_name``  list **collection_name modulefiles** 
+   ==================================== =======================
+
+
 Compiling
 -------------------------
 
