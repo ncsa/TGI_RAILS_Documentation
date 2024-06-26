@@ -19,10 +19,10 @@ to optimize at the -O3 or -Ofast level.
 Modules
 -------------------------
 
-Compilers
+Compiling
 -------------------------
 
-Serial
+Serial Programs
 ----------
 
 To build (compile and link) a serial program in Fortran, C, and C++:
@@ -34,7 +34,7 @@ gcc *myprog*.c      icc *myprog*.c    nvc *myprog*.c
 g++ *myprog*.cc     icpc *myprog*.cc  nvc++ *myprog*.cc
 =================== ================= ====================
 
-MPI
+MPI Programs
 -------------------------
 To build (compile and link) a MPI program in Fortran, C, and C++:
 
@@ -73,7 +73,7 @@ To build (compile and link) a MPI program in Fortran, C, and C++:
 Python
 -------------------------
 
-OpenMP
+OpenMP Programs
 -------------------------
 
 To build an OpenMP program, use the -fopenmp /-mp option:
@@ -89,14 +89,14 @@ To build an OpenMP program, use the -fopenmp /-mp option:
 | *myprog*.cc          | *myprog*.cc          |                      |
 +----------------------+----------------------+----------------------+
 
-Hybrid MPI/OpenMP
+Hybrid MPI/OpenMP Programs
 -------------------
 
 To build an MPI/OpenMP hybrid program, use the -fopenmp / -mp option
 with the MPI compiling commands:
 
 ============================ =======================
-GNU                            NVIDIA
+GNU                            NVIDIA 
 mpif77 -fopenmp *myprog*.f     mpif77 -mp *myprog*.f
 mpif90 -fopenmp *myprog*.f90   mpif90 -mp *myprog*.f90
 mpicc -fopenmp *myprog*.c      mpicc -mp *myprog*.c
@@ -104,11 +104,11 @@ mpic++ -fopenmp *myprog*.cc    mpic++ -mp *myprog*.cc
 ============================ =======================
 
 
-OpenACC
+OpenACC Programs
 -------------------------
 
 To build an OpenACC program, use the -acc option and the -mp option for
-multi-threaded:
+multi-threaded, under the NVIDIA compilers:
 
 ========================= =============================
 NON-MULTITHREADED           MULTITHREADED
@@ -120,23 +120,21 @@ nvc++ -acc *myprog*.cc      nvc++ -acc -mp *myprog*.cc
 CUDA
 -------------------------
 
-Cuda compilers (nvcc) are included in the cuda module which is loaded by
-default under modtree/gpu. For the cuda fortran compiler and other
+The cuda compiler (nvcc) is included in the cuda module, which is loaded by
+default. For access to the cuda fortran compiler, cuda c++ compiler and other
 Nvidia development tools, load the "nvhpc" module.
 
 ::
 
-   [arnoldg@dt-login03 namd]$ nv
-   nvaccelerror             nvidia-bug-report.sh     nvlink
-   nvaccelinfo              nvidia-cuda-mps-control  nv-nsight-cu
-   nvc                      nvidia-cuda-mps-server   nv-nsight-cu-cli
-   nvc++                    nvidia-debugdump         nvprepro
-   nvcc                     nvidia-modprobe          nvprof
-   nvcpuid                  nvidia-persistenced      nvprune
-   nvcudainit               nvidia-powerd            nvsize
-   nvdecode                 nvidia-settings          nvunzip
-   nvdisasm                 nvidia-sleep.sh          nvvp
-   nvextract                nvidia-smi               nvzip
-   nvfortran                nvidia-xconfig
+  [cmendes@railsl1 /]$ nv
+  nv-fabricmanager         nvcpuid                  nvidia-debugdump         nvlink
+  nv-hostengine            nvcudainit               nvidia-modprobe          nvprepro
+  nv-nsight-cu             nvdecode                 nvidia-persistenced      nvprof
+  nv-nsight-cu-cli         nvdisasm                 nvidia-powerd            nvprune
+  nvaccelerror             nvextract                nvidia-settings          nvsize
+  nvaccelinfo              nvfortran                nvidia-sleep.sh          nvswitch-audit
+  nvc                      nvidia-bug-report.sh     nvidia-smi               nvunzip
+  nvc++                    nvidia-cuda-mps-control  nvidia-xconfig           nvvp
+  nvcc                     nvidia-cuda-mps-server   nvjtag_discovery         nvzip
 
 See also: https://developer.nvidia.com/hpc-sdk
