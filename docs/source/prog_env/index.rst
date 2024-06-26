@@ -118,6 +118,22 @@ To build (compile and link) a MPI program in Fortran, C, and C++:
 Python
 -------------------------
 
+If you want a basic, recent Python setup, use the ``python`` installation under the ``gcc`` module. You can add modules via ``pip3 install --user <modulename>``, setup virtual environments, and customize as needed for your workflow, but starting from an installed base of Python smaller than Anaconda.
+
+.. code-block::
+
+   $ module load gcc python
+   $ which python
+   /sw/spack/v1/apps/python/3.11.6-gcc-11.4.0-apaxxj5/bin/python
+   $ module list
+
+   Currently Loaded Modules:
+     1) scripts/script_paths   3) StdEnv       5) cuda/11.8.0     7) python/3.11.6
+     2) user/license_file      4) gcc/11.4.0   6) openmpi/4.1.6
+
+View the python packages installed in this environment using ``pip3 list``
+
+
 OpenMP Programs
 -------------------------
 
