@@ -28,7 +28,7 @@ Hardware threads per core 2
 Hardware threads per node 64
 Clock rate (GHz)          ~ 2.50
 RAM (GB)                  256
-Cache (KB) L1/L2/L3       37.5MB
+Cache L1/L2/L3            48KB / 2MB / 37.5MB
 ========================= ===================
 
 Table. CPU Compute Node Specifications
