@@ -628,5 +628,5 @@ Refunds are considered, when appropriate, for jobs that failed due to
 circumstances beyond user control.
 
 Projects wishing to request a refund should email
-help@ncsa.illinois.edu. Please include the batch job ids and the
+help+tgi@ncsa.illinois.edu. Please include the batch job ids and the
 standard error and output files produced by the job(s).
