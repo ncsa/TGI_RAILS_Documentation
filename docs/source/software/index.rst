@@ -122,16 +122,18 @@ assistance. For general installation requests the TGI RAILS project office
 will review requests for broad use and installation effort.
 
 Python
--------------------------
+--------
 
-
-
-R
--------------------------
 .. toctree::
-   :maxdepth: 2
-   
+   :caption: Python
+
    python/index
    python_env/index
+
+R
+---
+
+.. toctree::
+   :caption: R
+
    R/index
-   
