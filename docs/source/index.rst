@@ -31,5 +31,5 @@ Contents
    services/index
    debug_perf/index
    protected_data
-   acknowledgement/index
+   acknowledge/index
    help
