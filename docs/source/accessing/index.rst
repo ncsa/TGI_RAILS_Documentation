@@ -29,11 +29,11 @@ CPU and GPU resources on TGI RAILS.
 | set of login nodes)              |                                               |
 +----------------------------------+-----------------------------------------------+
 
-Contact help+tgi@ncsa.illinois.edu for assistance if you do not know your NCSA
+Contact help@ncsa.illinois.edu for assistance if you do not know your NCSA
 username.
 
 Use of ssh-key pairs is disabled for general use. Please contact NCSA
-Help at help+tgi@ncsa.illinois.edu for key-pair use by Gateway allocations.
+Help at help@ncsa.illinois.edu for key-pair use by Gateway allocations.
 
 maintaining persistent sessions: tmux
 --------------------------------------
