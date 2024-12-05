@@ -19,7 +19,7 @@ To determine the project code please use the ``accounts`` command.
 
 Directory access changes can be made using the
 `facl <https://linux.die.net/man/1/setfacl>`_ command. Contact
-help+tgi@ncsa.illinois.edu if you need assistance with enabling access to
+help@ncsa.illinois.edu if you need assistance with enabling access to
 specific users and projects.
 
 ::
