@@ -28,6 +28,7 @@ Contents
    software/index
    visualization
    containers
+   ondemand/index
    services/index
    debug_perf/index
    protected_data
