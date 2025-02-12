@@ -1,4 +1,4 @@
-.. _open-ondemand:
+.. _ood:
 
 Open OnDemand
 =============
@@ -10,7 +10,7 @@ Open OnDemand is a web-based interface for accessing TGI Rails resources. It pro
 
 The Rails OnDemand interface can be accessed by navigating in a web browser to https://railsondemand.ncsa.illinois.edu.
 
-.. image:: images/open_on_demand/dashboard.png
+.. image:: images/ondemand/dashboard.png
     :alt: OnDemand dashboard page
     :align: center
 
