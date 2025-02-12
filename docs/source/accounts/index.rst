@@ -1,3 +1,5 @@
+.. _accounts:
+
 Allocation and Account Administration
 ========================
 
@@ -17,6 +19,9 @@ PIs may add and remove users to their allocation using the `NCSA group managemen
 <https://internal.ncsa.illinois.edu/mis/groups/>`_. PIs can delegate the ability to manage users to other project members once those accounts are added to the project. Please refer to `this page 
 <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management#NCSAAllocationandAccountManagement-GroupManagement>`_ 
 for additional documentation on the group management interface.
+
+Please see this `page <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Allocation+and+Account+Management>`_ for links to NCSA
+Identity and NCSA Duo services. 
 
 Account and Group
 -------------------
