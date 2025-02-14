@@ -17,14 +17,14 @@ that don't provide a default ssh client such as Windows, we recommend using the
 To connect to RAILs via ssh, use the following command where `<username>` is replaced by your NCSA 
 account username:
 
-.. code-block:: bash
+.. code-block:: terminal
     ssh <username>@rails.ncsa.illinois.edu
 
 **Host Key Verification**
 
 The first time you connect to RAILS via ssh, you see a warning like this: 
 
-.. code-block:: bash
+.. code-block:: terminal
     The authenticity of host 'rails.ncsa.illinois.edu can't be established. ECDSA key fingerprint is SHA256:XXXX...XXXX. Are you sure you want to continue connecting (yes/no)?
 
 This is normal and is a security feature of SSH. Your SSH client warns you when connecting to a 
@@ -43,7 +43,7 @@ Upon connecting, you will be prompted to enter your NCSA password.
 After successfully entering your password, you'll be prompted to authenticate with a two-factor 
 method with a message like this:
 
-.. code-block:: bash
+.. code-block:: terminal
     (<username>@rails.ncsa.illinois.edu) Duo two-factor login for <username>
     Enter a passcode or select one of the following options:
 
@@ -60,6 +60,7 @@ login nodes!
 
 .. Warning::
     **Login node usage policy**
+    
     Login nodes are shared among all users and are intended for file management, job submission, 
     and other tasks that do not require significant computational resources. Please do not run 
     computationally intensive jobs on the login nodes. Please see the :ref:`job submission` page 
@@ -78,7 +79,7 @@ https://railsondemand.ncsa.illinois.edu
 
 This should display the following CILogon page:
 
-.. image:: docs/images/accessing/CILogon.png
+.. image:: images/CILogon.png
     :alt: CILogon page
     :align: center
 
@@ -86,7 +87,7 @@ Select "National Center for Supercomputing Applications" as your Identity Provid
 and click log on. This will open the NCSA Login page where you can enter your NCSA username and 
 password. After entering your credentials, you will be prompted to authenticate with DUO.
 
-.. image:: docs/images/accessing/NCSA_login.png
+.. image:: images/NCSA_login.png
     :alt: NCSA login page
     :align: center
 
@@ -101,7 +102,7 @@ can access the various apps and tools available on TGI RAILS.
 
 When you connectted to TGI RAILS via ssh, railsl1 or railsl2. You can determine which login node 
 you are connected to by looking at the command prompt. It should look like this:
-.. code-block::bash
+.. code-block:: terminal
     [<username>@railsl1 ~]$
 
 The rails.ncsa.illinois.edu hostname is a round-robin DNS entry that points to one of the two 
@@ -114,7 +115,7 @@ railsl2.ncsa.illinois.edu.
 For command line ssh clients, make sure to use the following settings if you have trouble logging 
 in to TGI RAILS:
 
-.. code-block::bash
+.. code-block:: terminal
     ssh -o PreferredAuthentications=keyboard-interactive,password
 
 
@@ -126,7 +127,7 @@ through a login node.
 
 This can be accomplished with the following command:
 
-.. code-block::bash
+.. code-block:: terminal
     ssh -L <local_port>:<compute_node>:<compute_port> <username>@<login_node>
 
 **maintaining persistent sessions: tmux**
