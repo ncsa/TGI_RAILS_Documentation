@@ -3,7 +3,7 @@
 JupyterLab
 ============
 
-The Open OnDemand dashboard provides an easy way to launch a JupyterLab environment on Delta.
+The Open OnDemand dashboard provides an easy way to launch a JupyterLab environment on RAILS.
 
 How to Start an OOD JupyterLab Session
 -----------------------------------------

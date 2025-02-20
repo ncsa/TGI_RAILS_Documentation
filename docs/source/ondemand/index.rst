@@ -6,11 +6,11 @@ Open OnDemand
 Open OnDemand is a web-based interface for accessing TGI Rails resources. It provides a user-friendly way to manage files, submit and monitor jobs, and use interactive apps such as Jupyter notebook, without neededing a SSH terminal connection.
 
 
-## Connecting
+**Connecting**
 
 The Rails OnDemand interface can be accessed by navigating in a web browser to https://railsondemand.ncsa.illinois.edu. See 
 
-.. image:: images/ondemand/dashboard.png
+.. image:: images/dashboard.png
     :alt: OnDemand dashboard page
     :align: center
 
@@ -38,7 +38,7 @@ One of the most powerful features of Open OnDemand is the ability to run interac
 
 .. _ood-jupyter-notebook:
 
-### Jupyter Notebook
+**Jupyter Notebook**
     Jupyter notebooks are a powerful tool for data analysis and visualization. To start a Jupyter notebook, click on **Interactive Apps > Jupyter Notebook** in the navigation bar. You can then select the resources you need and start the notebook server.
 
 .. toctree::
@@ -48,7 +48,7 @@ One of the most powerful features of Open OnDemand is the ability to run interac
 
 .. _ood-vscode:
 
-### Vscode
+**Vscode**
     Visual Studio Code is a powerful code editor that can be run directly in your browser. To start Vscode, click on **Interactive Apps > Vscode** in the navigation bar. You can then select the resources you need and start the Vscode server.
 
 .. toctree::
@@ -58,5 +58,10 @@ One of the most powerful features of Open OnDemand is the ability to run interac
 
 .. _ood-tensorboard:
 
-### Tensorboard
+**Tensorboard**
     Tensorboard is a tool for visualizing and monitoring the training of machine learning models. To start Tensorboard, click on **Interactive Apps > Tensorboard** in the navigation bar. You can then select the resources you need and start the Tensorboard server.
+
+.. toctree::
+    :maxdepth: 1
+
+    tensorboard
