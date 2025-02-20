@@ -27,7 +27,9 @@ The first time you connect to RAILS via ssh, you see a warning like this:
 
 .. code-block:: terminal
 
-    The authenticity of host 'rails.ncsa.illinois.edu can't be established. ECDSA key fingerprint is SHA256:XXXX...XXXX. Are you sure you want to continue connecting (yes/no)?
+    The authenticity of host 'rails.ncsa.illinois.edu can't be established. 
+    ECDSA key fingerprint is SHA256:XXXX...XXXX. Are you sure you want to 
+    continue connecting (yes/no)?
 
 This is normal and is a security feature of SSH. Your SSH client warns you when connecting to a 
 new host for the first time. If you accept the prompt the host key will be saved on your local 
@@ -40,7 +42,9 @@ connecting with is the same each time.
 
 Upon connecting, you will be prompted to enter your NCSA password.
 
-`<username>@rails.ncsa.illinois.edu's password:`
+.. code-block:: terminal
+
+    <username>@rails.ncsa.illinois.edu's password:
 
 After successfully entering your password, you'll be prompted to authenticate with a two-factor 
 method with a message like this:
@@ -105,6 +109,7 @@ can access the various apps and tools available on TGI RAILS.
 
 When you connectted to TGI RAILS via ssh, railsl1 or railsl2. You can determine which login node 
 you are connected to by looking at the command prompt. It should look like this:
+
 .. code-block:: terminal
 
     [<username>@railsl1 ~]$
@@ -133,7 +138,7 @@ through a login node.
 This can be accomplished with the following command:
 
 .. code-block:: terminal
-    
+
     ssh -L <local_port>:<compute_node>:<compute_port> <username>@<login_node>
 
 **maintaining persistent sessions: tmux**

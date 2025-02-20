@@ -8,7 +8,7 @@ Open OnDemand is a web-based interface for accessing TGI Rails resources. It pro
 
 ## Connecting
 
-The Rails OnDemand interface can be accessed by navigating in a web browser to https://railsondemand.ncsa.illinois.edu.
+The Rails OnDemand interface can be accessed by navigating in a web browser to https://railsondemand.ncsa.illinois.edu. See 
 
 .. image:: images/ondemand/dashboard.png
     :alt: OnDemand dashboard page
@@ -31,7 +31,8 @@ Interactive apps
 ----------------
 
 One of the most powerful features of Open OnDemand is the ability to run interactive GUI based applications directly in your browser. On RAILS the available interactive apps include:
-    - Jupyter Notebook
+    
+    - Jupyter Notebook 
     - Vscode
     - Tensorboard
 
@@ -40,6 +41,10 @@ One of the most powerful features of Open OnDemand is the ability to run interac
 ### Jupyter Notebook
     Jupyter notebooks are a powerful tool for data analysis and visualization. To start a Jupyter notebook, click on **Interactive Apps > Jupyter Notebook** in the navigation bar. You can then select the resources you need and start the notebook server.
 
+.. toctree::
+    :maxdepth: 1
+
+    jupyterLab
 
 .. _ood-vscode:
 
