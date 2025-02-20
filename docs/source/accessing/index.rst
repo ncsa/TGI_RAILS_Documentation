@@ -74,7 +74,7 @@ login nodes!
     for information on submitting jobs to the compute nodes.
 
 
-**Connecting with Open OnDemand**
+Connecting with Open OnDemand
 -----------------------------------
 
 .. Warning::
@@ -102,7 +102,7 @@ Once you have authenticated with DUO, you will be taken to the RAILS OnDemand da
 can access the various apps and tools available on TGI RAILS.
 
 
-**Troubleshooting and Connection Help** 
+Troubleshooting and Connection Help
 --------------------------------------------
 
 **Connecting to a specific node**

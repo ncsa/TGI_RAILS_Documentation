@@ -26,13 +26,13 @@ How to Start an OOD JupyterLab Session
 
 #. After you click **Launch**, you will be taken to **My Interactive Sessions** where you can view the status of your session.
 
-   .. figure:: images/jupyter-starting.png
+   .. figure:: images/jupyterLab-starting.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Jupyter Lab session status: "Your session is currently starting...Please be patient as this process can take a few minutes."
       :width: 500
 
 #. Once your session has started, click **Connect to Jupyter** to launch your JupyterLab environment. Note, this can take up to few minutes depending on availability.
 
-   .. figure:: images/jupyter-connect.png
+   .. figure:: images/jupyterLab-connect.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Jupyter Lab session with the Connect to Jupyter button.
       :width: 500
 

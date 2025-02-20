@@ -26,7 +26,7 @@ How to Start an OOD VS Code Session
 
 #. After you click **Launch**, you will be taken to **My Interactive Sessions** where you can view the status of your session.
 
-   .. figure:: images/code-server-starting.png
+   .. figure:: images/vs-code-starting.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Code Server session status: "Your session is currently starting...Please be patient as this process can take a few minutes."
       :width: 500
 
