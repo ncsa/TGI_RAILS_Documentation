@@ -51,6 +51,11 @@ One of the most powerful features of Open OnDemand is the ability to run interac
 ### Vscode
     Visual Studio Code is a powerful code editor that can be run directly in your browser. To start Vscode, click on **Interactive Apps > Vscode** in the navigation bar. You can then select the resources you need and start the Vscode server.
 
+.. toctree::
+    :maxdepth: 1
+
+    vscode
+
 .. _ood-tensorboard:
 
 ### Tensorboard

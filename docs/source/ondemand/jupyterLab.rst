@@ -57,7 +57,7 @@ The available `conda-based environment kernels for Jupyter <https://github.com/A
 
 You can also :ref:`customize OOD JupyterLab with Anaconda environments <ood-custom-anaconda>`.
 
-To see the possible Jupyter kernels for your current environment or module setup, run one of the following in a Delta terminal (:ref:`Open OnDemand shell <ood-shell-interface>` or :ref:`direct SSH <direct_access>`):
+To see the possible Jupyter kernels for your current environment or module setup, run one of the following in a RAILS terminal (:ref:`Open OnDemand shell <ood-shell-interface>` or :ref:`direct SSH <direct_access>`):
 
   - .. code-block:: terminal
 
