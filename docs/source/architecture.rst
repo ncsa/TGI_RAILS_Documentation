@@ -105,17 +105,12 @@ TGI-RAILS resources are inter-connected with 100Gbps Ethernet.
 Storage (File Systems)
 -----------------------
 
-TGI RAILS has two primary file systems, Home and Projects. Both are powered by the VAST storage system.
-
-**Need to describe the VAST storage system and how it is presented to the system.**
-*Hardware:
-VAST 1x1 system with 330TB of flash storage.
-
-$WORK and $SCRATCH
-
-A "module reset" in a job script will populate $WORK
-environment variables automatically, or you may set them as
-WORK=/projects/<account>/$USER .
+RAILS storage is powered by the VAST storage system, an all-flash unified storage solution that 
+provides a total raw capacity of 560 TB. With data-aware file compression, the effective capacity 
+of the VAST system is augmented to approximately 1.7 PB. It boasts impressive performance 
+capabilities, delivering 37 GB/s read and 6 GB/s write speeds, with 200,000 IOPS, ensuring 
+efficient and rapid access to stored data. This system includes two primary file systems: Home and 
+Projects which share the same storage capacity.
 
 +-----------------+---------------------+--------------+------------+-----------------------------+
 | **File System** | **Total Capacity**  | **Default    | **Purged** | **Description**             |
