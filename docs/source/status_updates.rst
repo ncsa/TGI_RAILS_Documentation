@@ -1,3 +1,5 @@
+.. _status_updates:
+
 TGI RAILS Status Updates
 -------------------------
 

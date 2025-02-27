@@ -35,23 +35,26 @@ before continuing.
 Browse NCSA’s `HPC-Moodle <https://www.hpc-training.org>`_ for a full list of HPC training 
 opportunities including self-paced tutorials and training events (in-person and virtual).
 
+.. toctree::
+   :maxdepth: 2
+
+   status_updates
+   help
 
 .. toctree::
    :maxdepth: 2
    :caption: User Guide
    
-   status_updates
-   help
    architecture
    accounts
    accessing/index
    citizenship
    file_mgmt/index
-   running_jobs/index
-   prog_env/index
+   running_jobs
+   prog_env
    software/index
    containers
    ondemand/index
    debug_perf/index
-   acknowledge/index
+   acknowledge
    
