@@ -9,7 +9,7 @@ TGI RAILS is a high-performance computing and data analysis system, funded by th
 Foundation and the Taylor Geospatial Institute and managed and operated at the National Center for 
 Supercomputing Applications at the University of Illinois. The RAILS system is available for use 
 by any of the academic institutions that make up the Taylor Geospatial Institute. RAILS is also 
-accessible via the `Open Science Grid https://osg-htc.org/`_.
+accessible via the `Open Science Grid <https://osg-htc.org/>`_.
 
 RAILS provides a highly capable GPU-focused compute environment for GPU and CPU workloads coupled 
 with a VAST filesystem, providing high-speed access to large datasets. The system is designed to 
@@ -21,7 +21,7 @@ Who is eligible to use TGI RAILS?
 Geospatial related researchers, faculty, and staff at each of the TGI member organizations are 
 eligible to use RAILS for geospatial-related research. The system can also be used in courses of 
 any discipline. Additionally up to 20% of RAILS capability is accessible via the `Open Science 
-Grid. https://osg-htc.org/`_.
+Grid. <https://osg-htc.org/>`_.
 
 Getting Started with High-Performance Computing
 ================================================
