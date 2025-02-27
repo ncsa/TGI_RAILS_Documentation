@@ -11,10 +11,10 @@ Connecting with SSH
 
 Direct access to TGI RAILS is provided via SSH. Most Unix-like operating systems provide an SSH 
 client by default, which can be accessed by typing the `ssh` command in a terminal. For systems 
-that don't provide a default ssh client such as Windows, we recommend using the 
+that don't provide a default SSH client such as Windows, we recommend using the 
 `PuTTY <https://putty.org>`_ SSH client.
 
-To connect to RAILs via ssh, use the following command where `<username>` is replaced by your NCSA 
+To connect to RAILs via SSH, use the following command where `<username>` is replaced by your NCSA 
 account username:
 
 .. code-block:: terminal
@@ -23,7 +23,7 @@ account username:
 
 **Host Key Verification**
 
-The first time you connect to RAILS via ssh, you see a warning like this: 
+The first time you connect to RAILS via SSH, you see a warning like this: 
 
 .. code-block:: terminal
 
@@ -107,7 +107,7 @@ Troubleshooting and Connection Help
 
 **Connecting to a specific node**
 
-When you connectted to TGI RAILS via ssh, railsl1 or railsl2. You can determine which login node 
+When you are connected to TGI RAILS via SSH, railsl1 or railsl2. You can determine which login node 
 you are connected to by looking at the command prompt. It should look like this:
 
 .. code-block:: terminal
@@ -119,9 +119,9 @@ login nodes, railsl1 or railsl2. If you are having trouble connecting to the sys
 connecting to a specific login node by using the hostname railsl1.ncsa.illinois.edu or 
 railsl2.ncsa.illinois.edu.
 
-**ssh keyboard-interactive**
+**SSH keyboard-interactive**
 
-For command line ssh clients, make sure to use the following settings if you have trouble logging 
+For command line SSH clients, make sure to use the following settings if you have trouble logging 
 in to TGI RAILS:
 
 .. code-block:: terminal
@@ -141,7 +141,7 @@ This can be accomplished with the following command:
 
     ssh -L <local_port>:<compute_node>:<compute_port> <username>@<login_node>
 
-**maintaining persistent sessions: tmux**
+**Maintaining persistent sessions: tmux**
 
 tmux is available on the login nodes to maintain persistent sessions.
 See the tmux man page for more information. Use the targeted login
@@ -151,5 +151,5 @@ round-robin hostname when using tmux.
 
 **SSH Key Pairs**
 
-Use of ssh-key pairs is disabled for general use. Please contact NCSA
+Use of SSH-key pairs is disabled for general use. Please contact NCSA
 Help at help@ncsa.illinois.edu for key-pair use by Gateway allocations.
