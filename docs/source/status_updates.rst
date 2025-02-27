@@ -1,4 +1,10 @@
 TGI RAILS Status Updates
 -------------------------
 
-All RAILS hardware has been setup and configured. Software setup is currently in progress.
+TGI RAILS users will be notified of planned maintenance and system downtime through:
+- Email notifications
+- The message of the day (MOTD) when accessing the system via SSH.
+- The Open OnDemand homepage.
+
+if you have any questions about upcoming maintenance, please contact the :ref: `TGI RAILS support 
+team<help>`

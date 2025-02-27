@@ -4,16 +4,19 @@ System Architecture
 Compute Nodes
 ----------------------
 
-The TGI RAILS compute ecosystem is composed of three node types:
+TGI RAILS is made up of a total of 8 nodes of three node types:
 
-#. Dual-socket CPU-only login nodes
-#. Dual-socket CPU-only compute nodes
-#. Dual-socket 8-way NVIDIA H100 GPU compute nodes
+2. Dual-socket CPU-only login nodes
+3. Dual-socket CPU-only compute nodes
+3. Dual-socket 8-way NVIDIA H100 GPU compute nodes
 
 All processors are Intel Sapphire Rapids CPUs and all have hardware multithreading turned on.
 
-Table. Login Node Specifications
+Login Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Login nodes provide interactive support for code editing, compilation and job submission. Login 
+nodes do not contain GPUs and are not intended for computationally intensive workloads. See our 
+:ref:`login node policy<citizenship>` for more information.
 
 ========================= ===================
 Specification             Value
@@ -31,7 +34,7 @@ RAM (GB)                  256
 Cache L1/L2/L3            48KB / 2MB / 37.5MB
 ========================= ===================
 
-Table. CPU Compute Node Specifications
+CPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ========================= ===================
@@ -51,7 +54,7 @@ Cache L1/L2/L3            48KB (p/core) / 2MB (p/core) / 105MB (shared)
 Local storage (TB)        1.92 TB
 ========================= ===================
 
-Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
+GPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------+-----------------------------------------+
@@ -91,15 +94,6 @@ Table. 8-way NVIDIA H100 GPU Large Memory Compute Node Specifications
 | Local storage (TB)        | 3.84 TB                                 |
 +---------------------------+-----------------------------------------+
 
-Login Nodes
---------------
-Login nodes provide interactive support for code editing and compilation.
-
-Specialized Nodes
----------------------
-TGI RAILS will support data transfer nodes (serving the "TGI RAILS" Globus
-collection) and nodes in support of other services.
-
 Network
 ------------
 TGI RAILS is connected to the NPCF core router & exit infrastructure via two
@@ -108,11 +102,12 @@ to/from users on an optimal peering.
 
 TGI-RAILS resources are inter-connected with 100Gbps Ethernet.
 
-File Systems
----------------
+Storage (File Systems)
+-----------------------
 
-Need to describe the VAST storage system and how it is presented to the system.
+TGI RAILS has two primary file systems, Home and Projects. Both are powered by the VAST storage system.
 
+**Need to describe the VAST storage system and how it is presented to the system.**
 *Hardware:
 VAST 1x1 system with 330TB of flash storage.
 
@@ -122,50 +117,18 @@ A "module reset" in a job script will populate $WORK
 environment variables automatically, or you may set them as
 WORK=/projects/<account>/$USER .
 
-| 
-
-+-------------+-------------+-------------+-------------+-------------+
-| **File      | **Quota**   | **          | **Purged**  | **Key       |
-| System**    |             | Snapshots** |             | Features**  |
-+-------------+-------------+-------------+-------------+-------------+
-| HOME (/u)   | **5TB.**    | No/TBA      | No          | Area for    |
-|             |             |             |             | software,   |
-|             |             |             |             | scripts,    |
-|             |             |             |             | job files,  |
-|             |             |             |             | etc.        |
-|             |             |             |             | **NOT**     |
-|             |             |             |             | intended as |
-|             |             |             |             | a           |
-|             |             |             |             | source/     |
-|             |             |             |             | destination |
-|             |             |             |             | for I/O     |
-|             |             |             |             | during jobs |
-+-------------+-------------+-------------+-------------+-------------+
-| WORK        | **50 TB**.  | No/TBA      | No          | Area for    |
-| (/projects) | Up to 1-25  |             |             | shared data |
-|             | TB by       |             |             | for a       |
-|             | allocation  |             |             | project,    |
-|             |             |             |             | common data |
-|             |             |             |             | sets,       |
-|             |             |             |             | software,   |
-|             |             |             |             | results,    |
-|             |             |             |             | etc.        |
-|             |             |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-| /tmp        | **1.92      | No          | After each  | Locally     |
-|             | (CPU) or    |             | job         | attached    |
-|             | 3.84 TB     |             |             | disk for    |
-|             | (GPU)**     |             |             | fast small  |
-|             | shared or   |             |             | file IO.    |
-|             | dedicated   |             |             |             |
-|             | depending   |             |             |             |
-|             | on node     |             |             |             |
-|             | usage by    |             |             |             |
-|             | job(s), no  |             |             |             |
-|             | quotas in   |             |             |             |
-|             | place       |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
-
-quota usage
-           
-The storage system does enforce quotas. Details on querying quotas and storage usage will be posted soon.
++-----------------+---------------------+--------------+------------+-----------------------------+
+| **File System** | **Total Capacity**  | **Default    | **Purged** | **Description**             |
+|                 |                     | User Quota** |            |                             |
++-----------------+---------------------+--------------+------------+-----------------------------+
+| HOME (/u)       | 560 TB Raw, ~1.7 PB | **18.5 TB**  | Never      | User home directory, Area   |
+|                 | accessible via VAST |              |            | for software, scripts, job  |
+|                 | compression.        |              |            | files, etc.                 |
++-----------------+---------------------+--------------+------------+-----------------------------+
+| WORK (/projects)| 560 TB Raw, ~1.7 PB | **37.185 TB**| Never      | Area for shared data for a  |
+|                 | accessible via VAST |              |            | project, common data sets,  |
+|                 | compression.        |              |            | software, results, etc.     |
++-----------------+---------------------+--------------+------------+-----------------------------+
+| /tmp            | 1.92 TB CPU Node,   | None         | After each | Locally attached disk for   |
+|                 | 3.84 TB GPU Node    |              | job        | fast small file IO.         |
++-----------------+---------------------+--------------+------------+-----------------------------+

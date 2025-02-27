@@ -4,7 +4,7 @@ Accessing The System
 =========================
 .. Note::
     All users must have a valid NCSA account with DUO setup in order to access the TGI RAILS 
-    system. For help, please see the :ref:`accounts` page.
+    system. For help with your account or getting an allocation on rails, please see the :ref:`accounts` page.
 
 Connecting with SSH
 -----------------------------
