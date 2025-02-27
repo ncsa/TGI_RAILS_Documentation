@@ -16,7 +16,7 @@ Login Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Login nodes provide interactive support for code editing, compilation and job submission. Login 
 nodes do not contain GPUs and are not intended for computationally intensive workloads. See our 
-:ref:`login node policy<citizenship>` for more information.
+:ref:`login node policy <citizenship>` for more information.
 
 ========================= ===================
 Specification             Value
@@ -121,11 +121,11 @@ WORK=/projects/<account>/$USER .
 | **File System** | **Total Capacity**  | **Default    | **Purged** | **Description**             |
 |                 |                     | User Quota** |            |                             |
 +-----------------+---------------------+--------------+------------+-----------------------------+
-| HOME (/u)       | 560 TB Raw, ~1.7 PB | **18.5 TB**  | Never      | User home directory, Area   |
+| HOME (/u)       | 560 TB Raw, ~1.7 PB | 18.5 TB      | Never      | User home directory, Area   |
 |                 | accessible via VAST |              |            | for software, scripts, job  |
 |                 | compression.        |              |            | files, etc.                 |
 +-----------------+---------------------+--------------+------------+-----------------------------+
-| WORK (/projects)| 560 TB Raw, ~1.7 PB | **37.185 TB**| Never      | Area for shared data for a  |
+| WORK (/projects)| 560 TB Raw, ~1.7 PB | 37.185 TB    | Never      | Area for shared data for a  |
 |                 | accessible via VAST |              |            | project, common data sets,  |
 |                 | compression.        |              |            | software, results, etc.     |
 +-----------------+---------------------+--------------+------------+-----------------------------+
