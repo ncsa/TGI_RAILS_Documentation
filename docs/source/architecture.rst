@@ -6,9 +6,9 @@ Compute Nodes
 
 TGI RAILS is made up of a total of 8 nodes of three node types:
 
-2. Dual-socket CPU-only login nodes
-3. Dual-socket CPU-only compute nodes
-3. Dual-socket 8-way NVIDIA H100 GPU compute nodes
+- 2 Dual-socket CPU-only login nodes
+- 3 Dual-socket CPU-only compute nodes
+- 3 Dual-socket 8-way NVIDIA H100 GPU compute nodes
 
 All processors are Intel Sapphire Rapids CPUs and all have hardware multithreading turned on.
 
