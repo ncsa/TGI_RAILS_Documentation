@@ -35,6 +35,8 @@ before continuing.
 Browse NCSA’s `HPC-Moodle <https://www.hpc-training.org>`_ for a full list of HPC training 
 opportunities including self-paced tutorials and training events (in-person and virtual).
 
+=======================
+
 .. toctree::
    :maxdepth: 2
 
