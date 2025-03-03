@@ -33,7 +33,7 @@ described below (or you may install your own python versions):
 A couple examples using all of the above are shown at this site covering
 scikit-learn-intelex (an Intel accelerated scikit learn subset library
 for x86_64 architecture) :
-https://github.com/intel/scikit-learn-intelex/blob/master/INSTALL.md
+`Scikit-learn GitHub repository <https://github.com/intel/scikit-learn-intelex/blob/master/INSTALL.md>`_
 
 NGC containers for gpu nodes
 
@@ -73,7 +73,7 @@ you can start your conda environments, but with the container's python
 older versions of python and modules
 """"""""""""""""""""""""""""""""""""
 
-https://repo.anaconda.com/archive/ contains previous Anaconda versions.
+`Anaconda Archive <https://repo.anaconda.com/archive/>`_ contains previous Anaconda versions.
 The bundles are not small, but using one from Anaconda would ensure that
 you get software that was built to work together at a point in time. If
 you require an older version of a python lib/module, we suggest looking
