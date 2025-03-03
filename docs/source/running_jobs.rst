@@ -13,13 +13,16 @@ are reserved for your job and don't necessarily reflect how the
 resources are used.* Charges are based on either the number of cores or
 the fraction of the memory requested, whichever is larger.
 
-========= ============ ======================== ======= ===========
-Node Type              Service Unit Equivalence GPUs    Host Memory                      
-CPU core               1                        N/A     5.3 GB
-CPU Node               96                       N/A     512 GB
-GPU Node  One H100     120                      1 H100  256 GB
-GPU Node  8-way H100   960                      8 H100  2048 GB
-========= ============ ======================== ======= ===========
+.. table:: Service Unit Equivalents by Node Type
+
+   ====================== ======================== ======= ===========
+   Node Type              Service Unit Equivalence GPUs    Host Memory  
+   ====================== ======================== ======= ===========
+   CPU core               1                        N/A     5.3 GB
+   CPU Node               96                       N/A     512 GB
+   GPU Node: One H100     120                      1 H100  256 GB
+   GPU Node: 8-way H100   960                      8 H100  2048 GB
+   ====================== ======================== ======= ===========
 
 Local Account Charging
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -398,24 +401,26 @@ squeue/scontrol/sinfo
 
 Commands that display batch job and partition information .
 
-+-------------------------+-------------------------------------------+
-| SLURM EXAMPLE COMMAND   | DESCRIPTION                               |
-+-------------------------+-------------------------------------------+
-| squeue -a               | List the status of all jobs on the        |
-|                         | system.                                   |
-+-------------------------+-------------------------------------------+
-| squeue -u $USER         | List the status of all your jobs in the   |
-|                         | batch system.                             |
-+-------------------------+-------------------------------------------+
-| squeue -j JobID         | List nodes allocated to a running job in  |
-|                         | addition to basic information..           |
-+-------------------------+-------------------------------------------+
-| scontrol show job JobID | List detailed information on a particular |
-|                         | job.                                      |
-+-------------------------+-------------------------------------------+
-| sinfo -a                | List summary information on all the       |
-|                         | partition.                                |
-+-------------------------+-------------------------------------------+
+.. table:: Common squeue, scontrol, and sinfo Commands
+
+   +-------------------------+-------------------------------------------+
+   | SLURM EXAMPLE COMMAND   | DESCRIPTION                               |
+   +=========================+===========================================+
+   | squeue -a               | List the status of all jobs on the        |
+   |                         | system.                                   |
+   +-------------------------+-------------------------------------------+
+   | squeue -u $USER         | List the status of all your jobs in the   |
+   |                         | batch system.                             |
+   +-------------------------+-------------------------------------------+
+   | squeue -j JobID         | List nodes allocated to a running job in  |
+   |                         | addition to basic information..           |
+   +-------------------------+-------------------------------------------+
+   | scontrol show job JobID | List detailed information on a particular |
+   |                         | job.                                      |
+   +-------------------------+-------------------------------------------+
+   | sinfo -a                | List summary information on all the       |
+   |                         | partition.                                |
+   +-------------------------+-------------------------------------------+
 
 See the manual (man) pages for other available options.
 
@@ -468,37 +473,26 @@ NODELIST(REASON)
 MaxGRESPerAccount - a user has exceeded the number of cores or gpus
 allotted per user or project for a given partition.
 
-| 
 
-Useful Batch Job Environment Variablesslurm_environment_variables
+.. table:: Useful Batch Job Environment Variables
 
-+-------+-----------+-------------------------------------+
-| D     | SLURM     | DETAIL DESCRIPTION                  |
-| ESCRI | EN        |                                     |
-| PTION | VIRONMENT |                                     |
-|       | VARIABLE  |                                     |
-+=======+===========+=====================================+
-| JobID | $SLU      | Job identifier assigned to the job  |
-|       | RM_JOB_ID |                                     |
-+-------+-----------+-------------------------------------+
-| Job   | $SLURM_S  | By default, jobs start in the       |
-| Submi | UBMIT_DIR | directory that the job was          |
-| ssion |           | submitted from. So the "cd          |
-| Dire  |           | $SLURM_SUBMIT_DIR" command is not   |
-| ctory |           | needed.                             |
-+-------+-----------+-------------------------------------+
-| Mac   | $SLURM    | variable name that contains the     |
-| hine( | _NODELIST | list of nodes assigned to the batch |
-| node) |           | job                                 |
-| list  |           |                                     |
-+-------+-----------+-------------------------------------+
-| Array | $         | each member of a job array is       |
-| JobID | SLURM_ARR | assigned a unique identifier        |
-|       | AY_JOB_ID |                                     |
-|       | $S        |                                     |
-|       | LURM_ARRA |                                     |
-|       | Y_TASK_ID |                                     |
-+-------+-----------+-------------------------------------+
+   +--------------+----------------------------+-------------------------------------+
+   | DESCRIPTION  | SLURM ENVIRONMENT VARIABLE | DETAIL DESCRIPTION                  |
+   +==============+============================+=====================================+
+   | JobID        | $SLURM_JOB_ID              | Job identifier assigned to the job. |
+   +--------------+----------------------------+-------------------------------------+
+   | Job          | $SLURM_SUBMIT_DIR          | By default, jobs start in the       |
+   | Submision    |                            | directory that the job was submitted|
+   | Directory    |                            | from. So the "cd $SLURM_SUBMIT_DIR" |
+   |              |                            | command is not needed.              |
+   +--------------+----------------------------+-------------------------------------+
+   | Machine(node)| $SLURM_NODELIST            | Variable name that contains the list|
+   | list         |                            | of nodes assigned to the batch job. |
+   +--------------+----------------------------+-------------------------------------+
+   | Array JobID  | $SLURM_ARRAY_JOB_ID        | Each member of a job array is       |
+   |              |                            | assigned a unique identifier.       |
+   |              | $SLURM_ARRAY_TASK_ID       |                                     |
+   +--------------+----------------------------+-------------------------------------+
 
 See the sbatch man page for additional environment variables available.
 
@@ -509,15 +503,15 @@ Accessing the Compute Nodes
 TGI RAILS implements the Slurm batch environment to manage access to the
 compute nodes. Use the Slurm commands to run batch jobs or for
 interactive access to compute nodes. See:
-https://slurm.schedmd.com/quickstart.html for an introduction to Slurm.
+`Slurm Quick Start User Guide <https://slurm.schedmd.com/quickstart.html>`_ for an introduction to Slurm. 
 There are two ways to access compute nodes on TGI RAILS.
 
 Batch jobs can be used to access compute nodes. Slurm provides a
 convenient direct way to submit batch jobs. See
-https://slurm.schedmd.com/heterogeneous_jobs.html#submitting for
+`Slurm Submitting Jobs <https://slurm.schedmd.com/heterogeneous_jobs.html#submitting>`_ for
 details. Slurm supports job arrays for easy management of a set of
 similar jobs,
-see:\ `job_array.html <https://slurm.schedmd.com/job_array.html>`__\ .
+see: `Slurm Job Array Support <https://slurm.schedmd.com/job_array.html>`_.
 
 Sample Slurm batch job scripts are provided in the section below.
 
@@ -547,42 +541,37 @@ Scheduler
 
 **For information, consult:**
 
-https://slurm.schedmd.com/quickstart.html
+`Slurm Quick Start User Guide <https://slurm.schedmd.com/quickstart.html>`_
 
 250 slurm quick reference guide
 
 Partitions (Queues)
 -----------------------
 
-Table.Delta Production Default Partition Values
+.. table:: Delta Production Default Partition Values
 
-======================= ==========
-Property                Value
-Default Memory per core 1000 MB
-Default Wallclock time  30 minutes
-======================= ==========
+   ======================= ==========
+   Property                Value
+   ======================= ==========
+   Default Memory per core 1000 MB
+   Default Wallclock time  30 minutes
+   ======================= ==========
 
-Table.TGI RAILS Production Partitions/Queues
+.. table:: TGI RAILS Production Partitions/Queues
 
-+----------+----------+----------+----------+----------+----------+
-| **P      | **Node   | **Max    | **Max    | **Max    | **Charge |
-| artition | Type**   | Nodes    | Du       | Running  | Factor** |
-| /Queue** |          | per      | ration** | in       |          |
-|          |          | Job**    |          | Queue/   |          |
-|          |          |          |          | user\*** |          |
-+----------+----------+----------+----------+----------+----------+
-| cpu      | CPU      | TBD      | 48 hr    | TBD      | 1.0      |
-+----------+----------+----------+----------+----------+----------+
-| cpu-int  | CPU      | TBD      | 30 min   | TBD      | 2.0      |
-| eractive |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| g        | o        | TBD      | 48 hr    | TBD      | 1.5      |
-| puH100x8 | cta-H100 |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| gpuH1    | o        | TBD      | 1 hr     | TBD      | 3.0      |
-| 00x8-int | cta-H100 |          |          |          |          |
-| eractive |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
+   +----------------------+----------+----------+----------+--------------+----------+
+   | Partition/Queue      | Node Type| Max Nodes| Max      | Max          | Charge   |
+   |                      |          | per Job  | Duration | Running      | Factor   |
+   |                      |          |          |          | in Queue/user|          |
+   +======================+==========+==========+==========+==============+==========+
+   | cpu                  | CPU      | TBD      | 48 hr    | TBD          | 1.0      |
+   +----------------------+----------+----------+----------+--------------+----------+
+   | cpu-interactive      | CPU      | TBD      | 30 min   | TBD          | 2.0      |
+   +----------------------+----------+----------+----------+--------------+----------+
+   | gpuH100x8            | octa-H100| TBD      | 48 hr    | TBD          | 1.5      |
+   +----------------------+----------+----------+----------+--------------+----------+
+   | gpuH100x8-interactive| octa-H100| TBD      | 1 hr     | TBD          | 3.0      |
+   +----------------------+----------+----------+----------+--------------+----------+
 
 sview view of slurm partitions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
