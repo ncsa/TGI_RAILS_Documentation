@@ -67,7 +67,7 @@ password prompt for DUO (push to device or passcode from DUO app).
 -  rsync - to be used for small to modest transfers to avoid impacting
    the usability of the RAILS login node.
 
-   -  https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/
+   -  `Campus Cluster Data and Storage Guide <https://campuscluster.illinois.edu/resources/docs/storage-and-data-guide/>`_
       (scp, sftp, rsync)
 
 -  Globus - to be used for large data transfers including transfering data between file systems.
@@ -77,7 +77,7 @@ password prompt for DUO (push to device or passcode from DUO app).
    -  Use the TGI RAILS collection "**TGI RAILS**".
    -  Please see the following documentation on using Globus
 
-      -  https://docs.globus.org/how-to/get-started/
+      -  `Globus - Get Started <https://docs.globus.org/how-to/get-started/>`_
 
 .. _transferring-files:
 
