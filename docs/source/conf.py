@@ -9,6 +9,16 @@ author = 'NCSA'
 release = '0.1'
 version = '0.1.0'
 
+# Restoring GitHub link
+
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "ncsa", # Username
+    "github_repo": "TGI_RAILS_Documentation", # Repo name
+    "github_version": os.environ.get("READTHEDOCS_GIT_IDENTIFIER"),  # Version
+    "conf_py_path": "/docs/source/", # Path in the checkout to the docs root
+}
+
 # -- General configuration
 
 extensions = [
