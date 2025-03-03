@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx_copybutton',
 ]
 
 intersphinx_mapping = {
@@ -36,4 +37,23 @@ epub_show_urls = 'footnote'
 
 html_css_files = [
     'css/custom.css',
+    'css/table.css',
 ]
+
+# -- custom JS
+html_js_files = [
+    'js/custom.js',
+]
+
+html_static_path = ['_static']
+
+# -- Logo 
+html_logo = "images/BlockI-NCSA-Full-Color-RGB_border4.png"
+html_theme_options = {
+     'logo_only': False,
+     'display_version': False,
+     'flyout_display': 'attached',
+ }
+
+# -- Page Title
+html_title = 'TGI RAILS User Guide'
