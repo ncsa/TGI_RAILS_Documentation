@@ -35,7 +35,7 @@ Modules are independent of the user’s shell, so both **tcsh** and **bash** use
    =========================================== ==========================
    ``module avail``                            lists all available modules      
    ``module list``                             lists currently loaded modules
-   ``module avail | more``		           display the available modules on the system one page at a time
+   ``module avail | more``		                 display the available modules on the system one page at a time
    ``module spider foo``                       search for modules named **foo**     
    ``module help modulefile``                  help on module **modulefile**        
    ``module display modulefile``               display information about **modulefile**      
@@ -74,12 +74,15 @@ Serial Programs
 
 To build (compile and link) a serial program in Fortran, C, and C++:
 
-=================== ================= ====================
-GNU                 Intel             NVIDIA
-gfortran *myprog*.f ifort *myprog*.f  nvfortran *myprog*.f
-gcc *myprog*.c      icc *myprog*.c    nvc *myprog*.c
-g++ *myprog*.cc     icpc *myprog*.cc  nvc++ *myprog*.cc
-=================== ================= ====================
+.. table:: Serial Program Commands
+
+   =================== ================= ====================
+   GNU                 Intel             NVIDIA
+   =================== ================= ====================
+   gfortran *myprog*.f ifort *myprog*.f  nvfortran *myprog*.f
+   gcc *myprog*.c      icc *myprog*.c    nvc *myprog*.c
+   g++ *myprog*.cc     icpc *myprog*.cc  nvc++ *myprog*.cc
+   =================== ================= ====================
 
 MPI Programs
 -------------------------
@@ -116,12 +119,15 @@ OpenMP Programs
 
 To build an OpenMP program, use the -fopenmp/-mp option:
 
-============================= ========================== ===========================
-GNU                            Intel                      NVIDIA
-gfortran -fopenmp *myprog*.f   ifort -fopenmp *myprog*.f  nvfortran -mp *myprog*.f
-gcc -fopenmp *myprog*.c        icc -fopenmp *myprog*.c    nvc -mp *myprog*.c 
-g++ -fopenmp *myprog*.cc       icpc -fopenmp *myprog*.cc  nvc++ -mp *myprog*.cc
-============================= ========================== ===========================
+.. table:: OpenMP Program Commands
+
+   ============================= ========================== ===========================
+   GNU                            Intel                      NVIDIA
+   ============================= ========================== ===========================
+   gfortran -fopenmp *myprog*.f   ifort -fopenmp *myprog*.f  nvfortran -mp *myprog*.f
+   gcc -fopenmp *myprog*.c        icc -fopenmp *myprog*.c    nvc -mp *myprog*.c 
+   g++ -fopenmp *myprog*.cc       icpc -fopenmp *myprog*.cc  nvc++ -mp *myprog*.cc
+   ============================= ========================== ===========================
 
 Hybrid MPI/OpenMP Programs
 -------------------
@@ -129,13 +135,16 @@ Hybrid MPI/OpenMP Programs
 To build an MPI/OpenMP hybrid program, use the -fopenmp / -mp option
 with the MPI compiling commands:
 
-============================ =======================
-GNU, Intel                     NVIDIA 
-mpif77 -fopenmp *myprog*.f     mpif77 -mp *myprog*.f
-mpif90 -fopenmp *myprog*.f90   mpif90 -mp *myprog*.f90
-mpicc -fopenmp *myprog*.c      mpicc -mp *myprog*.c
-mpic++ -fopenmp *myprog*.cc    mpic++ -mp *myprog*.cc
-============================ =======================
+.. table:: Hybrid MPI/OpenMP Program Commands
+
+   ============================ =======================
+   GNU, Intel                     NVIDIA 
+   ============================ =======================
+   mpif77 -fopenmp *myprog*.f     mpif77 -mp *myprog*.f
+   mpif90 -fopenmp *myprog*.f90   mpif90 -mp *myprog*.f90
+   mpicc -fopenmp *myprog*.c      mpicc -mp *myprog*.c
+   mpic++ -fopenmp *myprog*.cc    mpic++ -mp *myprog*.cc
+   ============================ =======================
 
 
 OpenACC Programs
@@ -144,12 +153,15 @@ OpenACC Programs
 To build an OpenACC program, use the -acc option and the -mp option for
 multi-threaded, under the NVIDIA compilers:
 
-========================= =============================
-NON-MULTITHREADED           MULTITHREADED
-nvfortran -acc *myprog*.f   nvfortran -acc -mp *myprog*.f
-nvc -acc *myprog*.c         nvc -acc -mp *myprog*.c
-nvc++ -acc *myprog*.cc      nvc++ -acc -mp *myprog*.cc
-========================= =============================
+.. table:: OpenACC Program Commands
+
+   ========================= =============================
+   NON-MULTITHREADED           MULTITHREADED
+   ========================= =============================
+   nvfortran -acc *myprog*.f   nvfortran -acc -mp *myprog*.f
+   nvc -acc *myprog*.c         nvc -acc -mp *myprog*.c
+   nvc++ -acc *myprog*.cc      nvc++ -acc -mp *myprog*.cc
+   ========================= =============================
 
 CUDA
 -------------------------
@@ -171,4 +183,4 @@ Nvidia development tools, load the "nvhpc" module.
   nvc++                    nvidia-cuda-mps-control  nvidia-xconfig           nvvp
   nvcc                     nvidia-cuda-mps-server   nvjtag_discovery         nvzip
 
-See also: https://developer.nvidia.com/hpc-sdk
+See also: `NVIDIA Developer - HPC SDK <https://developer.nvidia.com/hpc-sdk>`_
