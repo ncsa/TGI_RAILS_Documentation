@@ -18,81 +18,85 @@ Login nodes provide interactive support for code editing, compilation and job su
 nodes do not contain GPUs and are not intended for computationally intensive workloads. See our 
 :ref:`login node policy <citizenship>` for more information.
 
-========================= ===================
-Specification             Value
-Model                     Dell PowerEdge R660
-Number of nodes           2
-CPU                       Intel Sapphire Rapids 6426Y
-                          (PCIe Gen5)
-Sockets per node          2
-Cores per socket          16
-Cores per node            32
-Hardware threads per core 2
-Hardware threads per node 64
-Clock rate (GHz)          ~ 2.50
-RAM (GB)                  256
-Cache L1/L2/L3            48KB / 2MB / 37.5MB
-========================= ===================
+.. table:: Login Node Specs
+
+   ========================= ===================
+   Specification             Value
+   ========================= ===================
+   Model                     Dell PowerEdge R660
+   Number of nodes           2
+   CPU                       Intel Sapphire Rapids 6426Y (PCIe Gen5)            
+   Sockets per node          2
+   Cores per socket          16
+   Cores per node            32
+   Hardware threads per core 2
+   Hardware threads per node 64
+   Clock rate (GHz)          ~ 2.50
+   RAM (GB)                  256
+   Cache L1/L2/L3            48KB / 2MB / 37.5MB
+   ========================= ===================
 
 CPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-========================= ===================
-Specification             Value
-Model                     Dell PowerEdge R760
-Number of nodes           3
-CPU                       Intel Sapphire Rapids 8468
-                          (PCIe Gen5)
-Sockets per node          2
-Cores per socket          48
-Cores per node            96
-Hardware threads per core 2
-Hardware threads per node 192
-Clock rate (GHz)          ~ 2.10
-RAM (GB)                  512
-Cache L1/L2/L3            48KB (p/core) / 2MB (p/core) / 105MB (shared)
-Local storage (TB)        1.92 TB
-========================= ===================
+.. table:: CPU Compute Node Specs
+
+   ========================= ===================
+   Specification             Value
+   ========================= ===================
+   Model                     Dell PowerEdge R760
+   Number of nodes           3
+   CPU                       Intel Sapphire Rapids 8468 (PCIe Gen5)
+   Sockets per node          2
+   Cores per socket          48
+   Cores per node            96
+   Hardware threads per core 2
+   Hardware threads per node 192
+   Clock rate (GHz)          ~ 2.10
+   RAM (GB)                  512
+   Cache L1/L2/L3            48KB (p/core) / 2MB (p/core) / 105MB (shared)
+   Local storage (TB)        1.92 TB
+   ========================= ===================
 
 GPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------+-----------------------------------------+
-| Specification             | Value                                   |
-+---------------------------+-----------------------------------------+
-| Model                     | Dell XE9680                             |
-+---------------------------+-----------------------------------------+
-| Number of nodes           | 3                                       |
-+---------------------------+-----------------------------------------+
-| GPU                       | NVIDIA H100                             |
-|                           | (`Vendor                                |
-|                           | page <https://www.nvidia.com/en-u       |
-|                           | s/data-center/h100/>`__)                |
-+---------------------------+-----------------------------------------+
-| GPUs per node             | 8                                       |
-+---------------------------+-----------------------------------------+
-| GPU Memory (GB)           | 80                                      |
-+---------------------------+-----------------------------------------+
-| CPU                       | Intel Sapphire Rapids 8468              |
-+---------------------------+-----------------------------------------+
-| CPU sockets per node      | 2                                       |
-+---------------------------+-----------------------------------------+
-| Cores per socket          | 48                                      |
-+---------------------------+-----------------------------------------+
-| Cores per node            | 96                                      |
-+---------------------------+-----------------------------------------+
-| Hardware threads per core | 2                                       |
-+---------------------------+-----------------------------------------+
-| Hardware threads per node | 192                                     |
-+---------------------------+-----------------------------------------+
-| Clock rate (GHz)          | ~ 2.10                                  |
-+---------------------------+-----------------------------------------+
-| RAM (GB)                  | 2,048                                   |
-+---------------------------+-----------------------------------------+
-| Cache L1/L2/L3            | 48KB(p/core)/ 2MB(p/core)/ 105MB(shared)|
-+---------------------------+-----------------------------------------+
-| Local storage (TB)        | 3.84 TB                                 |
-+---------------------------+-----------------------------------------+
+.. table:: GPU Compute Node Specs
+
+   +---------------------------+-----------------------------------------+
+   | Specification             | Value                                   |
+   +===========================+=========================================+
+   | Model                     | Dell XE9680                             |
+   +---------------------------+-----------------------------------------+
+   | Number of nodes           | 3                                       |
+   +---------------------------+-----------------------------------------+
+   | GPU                       | `NVIDIA H100 <https://www.nvidia.com/en |
+   |                           | -us/data-center/h100/>`_                |
+   +---------------------------+-----------------------------------------+
+   | GPUs per node             | 8                                       |
+   +---------------------------+-----------------------------------------+
+   | GPU Memory (GB)           | 80                                      |
+   +---------------------------+-----------------------------------------+
+   | CPU                       | Intel Sapphire Rapids 8468              |
+   +---------------------------+-----------------------------------------+
+   | CPU sockets per node      | 2                                       |
+   +---------------------------+-----------------------------------------+
+   | Cores per socket          | 48                                      |
+   +---------------------------+-----------------------------------------+
+   | Cores per node            | 96                                      |
+   +---------------------------+-----------------------------------------+
+   | Hardware threads per core | 2                                       |
+   +---------------------------+-----------------------------------------+
+   | Hardware threads per node | 192                                     |
+   +---------------------------+-----------------------------------------+
+   | Clock rate (GHz)          | ~ 2.10                                  |
+   +---------------------------+-----------------------------------------+
+   | RAM (GB)                  | 2,048                                   |
+   +---------------------------+-----------------------------------------+
+   | Cache L1/L2/L3            | 48KB(p/core)/ 2MB(p/core)/ 105MB(shared)|
+   +---------------------------+-----------------------------------------+
+   | Local storage (TB)        | 3.84 TB                                 |
+   +---------------------------+-----------------------------------------+
 
 Network
 ------------
@@ -112,18 +116,21 @@ capabilities, delivering 37 GB/s read and 6 GB/s write speeds, with 200,000 IOPS
 efficient and rapid access to stored data. This system includes two primary file systems: Home and 
 Projects which share the same storage capacity.
 
-+-----------------+---------------------+--------------+------------+-----------------------------+
-| **File System** | **Total Capacity**  | **Default    | **Purged** | **Description**             |
-|                 |                     | User Quota** |            |                             |
-+-----------------+---------------------+--------------+------------+-----------------------------+
-| HOME (/u)       | 560 TB Raw, ~1.7 PB | 18.5 TB      | Never      | User home directory, Area   |
-|                 | accessible via VAST |              |            | for software, scripts, job  |
-|                 | compression.        |              |            | files, etc.                 |
-+-----------------+---------------------+--------------+------------+-----------------------------+
-| WORK (/projects)| 560 TB Raw, ~1.7 PB | 37.185 TB    | Never      | Area for shared data for a  |
-|                 | accessible via VAST |              |            | project, common data sets,  |
-|                 | compression.        |              |            | software, results, etc.     |
-+-----------------+---------------------+--------------+------------+-----------------------------+
-| /tmp            | 1.92 TB CPU Node,   | None         | After each | Locally attached disk for   |
-|                 | 3.84 TB GPU Node    |              | job        | fast small file IO.         |
-+-----------------+---------------------+--------------+------------+-----------------------------+
+.. table:: File System Specs
+   :widths: 15 25 15 15 30
+
+   +-----------------+---------------------+--------------+------------+-----------------------------+
+   | File System     | Total Capacity      | Default      | Purged     | Description                 |
+   |                 |                     | User Quota   |            |                             |
+   +=================+=====================+==============+============+=============================+
+   | HOME (/u)       | 560 TB Raw, ~1.7 PB | 18.5 TB      | Never      | User home directory, Area   |
+   |                 | accessible via VAST |              |            | for software, scripts, job  |
+   |                 | compression.        |              |            | files, etc.                 |
+   +-----------------+---------------------+--------------+------------+-----------------------------+
+   | WORK (/projects)| 560 TB Raw, ~1.7 PB | 37.185 TB    | Never      | Area for shared data for a  |
+   |                 | accessible via VAST |              |            | project, common data sets,  |
+   |                 | compression.        |              |            | software, results, etc.     |
+   +-----------------+---------------------+--------------+------------+-----------------------------+
+   | /tmp            | 1.92 TB CPU Node,   | None         | After each | Locally attached disk for   |
+   |                 | 3.84 TB GPU Node    |              | job        | fast small file IO.         |
+   +-----------------+---------------------+--------------+------------+-----------------------------+

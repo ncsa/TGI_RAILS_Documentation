@@ -1,3 +1,31 @@
 .wy-nav-content {
     max-width: 90% !important;
 }
+
+/* making logo/home link hover color the same as background */
+body > div > nav > div > div.wy-side-nav-search > a:hover{
+    background: #2980b9 !important;
+}
+
+/* custom styling for 'about cookies' button in footer */
+#cookie-button {
+    cursor: pointer;
+    color:  #FF5F05;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#cookie-button:hover {
+    color: #13294B;
+}
+
+/* making "System Documentation Hub" link visited color the same as unvisited */
+a.hub-link:visited{
+    color: #2980b9 !important;
+}
+
+
+.hub-link{
+    text-align: right;
+}

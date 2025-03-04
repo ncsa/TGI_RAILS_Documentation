@@ -24,90 +24,62 @@ same default compiler and MPI but without cuda. Use module spider
 package_name to search for software in lmod and see the steps to load it
 for your environment.
 
-+----------------------------------+----------------------------------+
-| module (lmod) command            | example                          |
-+----------------------------------+----------------------------------+
-| .. container:: content-wrapper   | .. container:: content-wrapper   |
-|                                  |                                  |
-|    module list                   |    |                             |
-|                                  |                                  |
-|    (display the currently loaded |    ::                            |
-|    modules)                      |                                  |
-|                                  |       $ module list              |
-|    |                             |                                  |
-|                                  |       Currently Loaded Modules:  |
-|                                  |         1) gcc/11.2.0   3        |
-|                                  | ) openmpi/4.1.2   5) modtree/gpu |
-|                                  |                                  |
-|                                  |   2) ucx/1.11.2   4) cuda/11.6.1 |
-|                                  |                                  |
-|                                  |    |                             |
-+----------------------------------+----------------------------------+
-| module load <package_name>       | .. container:: content-wrapper   |
-|                                  |                                  |
-| (loads a package or metamodule   |    |                             |
-| such as modtree/gpu or netcdf-c) |                                  |
-|                                  |    ::                            |
-|                                  |                                  |
-|                                  |       $ module load modtree/cpu  |
-|                                  |                                  |
-|                                  |                                  |
-|                                  |     Due to MODULEPATH changes, t |
-|                                  | he following have been reloaded: |
-|                                  |         1) gcc/11.2.0     2)     |
-|                                  |  openmpi/4.1.2     3) ucx/1.11.2 |
-|                                  |                                  |
-|                                  |       The following have been    |
-|                                  |  reloaded with a version change: |
-|                                  |                                  |
-|                                  |    1) modtree/gpu => modtree/cpu |
-|                                  |                                  |
-|                                  |    |                             |
-+----------------------------------+----------------------------------+
-| module spider <package_name>     | .. container:: content-wrapper   |
-|                                  |                                  |
-| (finds modules and displays the  |    |                             |
-| ways to load them)               |                                  |
-|                                  |    ::                            |
-| |                                |                                  |
-|                                  |       $ module spider openblas   |
-| module -r spider "regular        |                                  |
-| expression"                      |       ------------               |
-|                                  | -------------------------------- |
-|                                  | -------------------------------- |
-|                                  |                                  |
-|                                  |        openblas: openblas/0.3.20 |
-|                                  |       ------------               |
-|                                  | -------------------------------- |
-|                                  | -------------------------------- |
-|                                  |                                  |
-|                                  |           You will nee           |
-|                                  | d to load all module(s) on any o |
-|                                  | ne of the lines below before the |
-|                                  |        "openblas/0.3.            |
-|                                  | 20" module is available to load. |
-|                                  |                                  |
-|                                  |             aocc/3.2.0           |
-|                                  |             gcc/11.2.0           |
-|                                  |                                  |
-|                                  |           Help:                  |
-|                                  |             Ope                  |
-|                                  | nBLAS: An optimized BLAS library |
-|                                  |       $ module -r spider "^r$"   |
-|                                  |                                  |
-|                                  |       ------------               |
-|                                  | -------------------------------- |
-|                                  | -------------------------------- |
-|                                  |         r:                       |
-|                                  |       ------------               |
-|                                  | -------------------------------- |
-|                                  | -------------------------------- |
-|                                  |            Versions:             |
-|                                  |               r/4.1.3            |
-|                                  |       ...                        |
-|                                  |                                  |
-|                                  |    |                             |
-+----------------------------------+----------------------------------+
+.. table:: Module (Lmod) Commands
+
+   +----------------------------------+--------------------------------------------------------------------------------------+
+   | Module (Lmod) Command            | Example                                                                              |
+   +==================================+======================================================================================+
+   |                                  |                                                                                      |
+   | .. code-block:: terminal         |   .. code-block::                                                                    |
+   |                                  |                                                                                      |
+   |    module list                   |      $ module list                                                                   |
+   |                                  |                                                                                      |
+   | Display the currently loaded     |      Currently Loaded Modules:                                                       |
+   | modules.                         |      1) gcc/11.2.0   3) openmpi/4.1.2                                                |
+   |                                  |      2) ucx/1.11.2   4) cuda/11.6.1                                                  |
+   |                                  |                                                                                      |
+   |                                  |                                                                                      |
+   +----------------------------------+--------------------------------------------------------------------------------------+
+   | .. code-block:: terminal         |                                                                                      |
+   |                                  |                                                                                      |
+   |    module load <package_name>    |   .. code-block::                                                                    |
+   |                                  |                                                                                      |
+   | Loads a package or metamodule    |      $ module load                                                                   |
+   | such as netcdf-c.                |                                                                                      |
+   |                                  |      Due to MODULEPATH changes, the following have been reloaded:                    |
+   |                                  |      1) gcc/11.2.0     2) openmpi/4.1.2     3) ucx/1.11.2                            |
+   |                                  |                                                                                      |
+   |                                  |                                                                                      |
+   |                                  |                                                                                      |
+   +----------------------------------+--------------------------------------------------------------------------------------+
+   | .. code-block:: terminal         |                                                                                      |
+   |                                  |                                                                                      |
+   |    module spider <package_name>  |   .. code-block::                                                                    |
+   |                                  |                                                                                      |
+   | Finds modules and displays the   |      $ module spider openblas                                                        |
+   | ways to load them.               |                                                                                      |
+   |                                  |      ---------------------------------------------------------------------------     |
+   | |                                |      openblas: openblas/0.3.20                                                       |
+   |                                  |      ----------------------------------------------------------------------------    |
+   | .. code-block:: terminal         |      You will need to load all module(s) on any one of the lines below before the    |
+   |                                  |      "openblas/0.3.20" module is available to load.                                  |
+   |    module -r spider "regular     |                                                                                      |
+   |    expression"                   |            aocc/3.2.0                                                                |
+   |                                  |            gcc/11.2.0                                                                |
+   |                                  |                                                                                      |
+   |                                  |         Help:                                                                        |
+   |                                  |           OpenBLAS: An optimized BLAS library                                        |
+   |                                  |                                                                                      |
+   |                                  |      $ module -r spider "^r$"                                                        |
+   |                                  |                                                                                      |
+   |                                  |      ----------------------------------------------------------------------------    |
+   |                                  |        r:                                                                            |
+   |                                  |      ----------------------------------------------------------------------------    |
+   |                                  |          Versions:                                                                   |
+   |                                  |             r/4.1.3                                                                  |
+   |                                  |      ...                                                                             |
+   |                                  |                                                                                      |
+   +----------------------------------+--------------------------------------------------------------------------------------+
 
 see also: `User Guide for
 Lmod <https://lmod.readthedocs.io/en/latest/010_user.html>`__
@@ -125,7 +97,6 @@ Python
 --------
 
 .. toctree::
-   :caption: Python
 
    python/index
    python_env/index
@@ -134,6 +105,5 @@ R
 ---
 
 .. toctree::
-   :caption: R
 
    R/index
