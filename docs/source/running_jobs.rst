@@ -28,7 +28,7 @@ Local Account Charging
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``accounts`` command to list the accounts available for
-charging. Users start out with a single chargable project but may
+charging. Users start out with a single chargeable project but may
 be added to other projects over time.
 
 ::
