@@ -33,12 +33,12 @@ be added to other projects over time.
 
 ::
 
-   $ accounts
-   Project Summary for User 'kingda':
+  [cmendes@railsl2 ~]$ accounts
+  Project Summary for User cmendes:
 
-   Project         Description                    Balance (Hours)    Deposited (Hours)
-   --------------  ---------------------------  -----------------  -------------------
-   bbka-tgirails   TGI RAILS staff allocation            5000000              5000000
+  Project        Description      Usage (SUs)
+  -------------  -------------  -------------
+  bcfz-tgirails  tgi                    21068
 
 Job Accounting Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
