@@ -75,55 +75,33 @@ project. Example usage:
 
 ::
 
-   [arnoldg@dt-login03 ]$ jobcharge bbka-delta-gpu -b 10 --detail | tail -15
-   106  1662443  gpuMI100x8                 0  nan                                                               kingda           bash                                    2023-04-06T09:39:01              0       0
-   107  1662444  gpuMI100x8               291  billing=1000,cpu=2,gres/gpu:mi100=1,gres/gpu=1,mem=3G,node=1      kingda           bash                                    2023-04-06T09:44:11           1000       0.08
-   108  1662449  gpuMI100x8               614  billing=1000,cpu=2,gres/gpu:mi100=1,gres/gpu=1,mem=3G,node=1      kingda           bash                                    2023-04-06T10:07:23           1000       0.17
-   109  1662477  gpuMI100x8               446  billing=1000,cpu=2,gres/gpu:mi100=1,gres/gpu=1,mem=3G,node=1      kingda           bash                                    2023-04-06T10:15:08           1000       0.12
-   110  1662492  gpuMI100x8               760  billing=8000,cpu=2,gres/gpu:mi100=8,gres/gpu=8,mem=3G,node=1      kingda           bash                                    2023-04-06T10:28:00           8000       1.69
-   111  1662511  gpuMI100x8-interactive  1521  billing=16000,cpu=128,gres/gpu:mi100=8,gres/gpu=8,mem=64G,node=1  arnoldg          bash                                    Unknown                      16000       6.76
-   _____SUMMARY___________________
-   User               Charge (SU)
-   ---------------  -------------
-   arnoldg                  25.76
-   babreu                    6.66
-   kingda                    2.06
-   rmokos                    0.96
-   svcdeltajenkins           0.23
-   Total                    35.67
+ [cmendes@railsl1 ~]$ jobcharge -d 10 bcfz-tgirails
+ Charges for account bcfz-tgirails from 2025-02-26-20:17:32 through 2025-03-08-20:17:32.
+ User       Charge (SU)
+ -------  -------------
+ cmendes           0.14
+ Total             0.14
 
-   [arnoldg@dt-login03 scripts]$ jobcharge bbka-delta-gpu -b 10
-   Output for 2023-03-27-11:25:24 through 2023-04-06-11:25:24:
-   User               Charge (SU)
-   ---------------  -------------
-   arnoldg                  26.04
-   babreu                    6.66
-   kingda                    2.06
-   rmokos                    0.96
-   svcdeltajenkins           0.23
-   Total                    35.95
+ [cmendes@railsl1 ~]$ jobcharge -h
+ usage: jobcharge [-h] [-s STARTTIME] [-e ENDTIME] [--detail] [-m MONTH] [-y YEAR] [-d DAYSBACK] [-a] account
 
-   [arnoldg@dt-login03 ]$ jobcharge bbka-delta-gpu -h
-   usage: jobcharge [-h] [-m MONTH] [-y YEAR] [-b DAYSBACK] [-s STARTTIME] [-e ENDTIME] [--detail]
-                    accountstring
+ positional arguments:
+   account               Name of the account to get jobcharges for. "accounts" command can be used to list your valid accounts.
 
-   positional arguments:
-     accountstring         account name
+ options:
+   -h, --help            show this help message and exit
+   -s STARTTIME, --starttime STARTTIME
+                         Get jobcharges after this time. Default is one month before the current time.
+   -e ENDTIME, --endtime ENDTIME
+                         Get jobcharges before this time. Default is the current time.
+   --detail, --details   detail output, per-job
+   -m MONTH, --month MONTH
+                         Get jobcharges for a specific month (1-12). Will override start end time arguments
+   -y YEAR, --year YEAR  Get jobcharges for a specific year. Will override start end time arguments
+   -d DAYSBACK, --daysback DAYSBACK
+                         Get jobcharges from the previous N days. Will take precedence over all other time search arguments
+   -a, --all             Display any job that occured during the queried time regardless of endtime.
 
-   optional arguments:
-     -h, --help            show this help message and exit
-     -m MONTH, --month MONTH
-                           Month (1-12) Default is current month
-     -y YEAR, --year YEAR  Year (20XX) default is current year
-     -b DAYSBACK, --daysback DAYSBACK
-                           Number of days back
-     -s STARTTIME, --starttime STARTTIME
-                           Start time string in format (format: %Y-%m-%d-%H:%M:%S)
-                           Example:2023-01-03-01:23:21)
-     -e ENDTIME, --endtime ENDTIME
-                           End time time string in format (format: %Y-%m-%d-%H:%M:%S)
-                           Example:2023-01-03-01:23:21)
-     --detail              detail output, per-job [svchydroswmanage@hydrol1 scripts]$ 
 
 Performance tools
 -----------------
