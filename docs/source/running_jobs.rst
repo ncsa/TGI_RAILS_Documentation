@@ -43,10 +43,10 @@ be added to other projects over time.
 Job Accounting Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  A node-exclusive job that runs on a compute node for one hour will be
+-  A node-exclusive job that runs on a CPU compute node for one hour will be
    charged 96 SUs (96 cores x 1 hour)
 -  A node-exclusive job that runs on an 8-way GPU node for one hour will
-   be charge 960 SUs (8 GPU x 1 hour)
+   be charged 960 SUs (8 GPUs x 1 hour)
 
 QOSGrpBillingMinutes
 ~~~~~~~~~~~~~~~~~~~~
