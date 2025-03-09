@@ -358,14 +358,14 @@ Job Management
 -----------------
 
 Batch jobs are submitted through a *job script* (as in the examples
-above) using the sbatch command. Job scripts generally start with a
-series of SLURM *directives* that describe requirements of the job such
-as number of nodes, wall time required, etc… to the batch
+above) using the ``sbatch`` command. Job scripts generally start with a
+series of SLURM *directives* that describe requirements of the job (such
+as number of nodes, wall time required, etc…) to the batch
 system/scheduler (SLURM directives can also be specified as options on
 the sbatch command line; command line options take precedence over those
 in the script). The rest of the batch script consists of user commands.
 
-The syntax for sbatch is:
+The syntax for ``sbatch`` is:
 
 **sbatch** [list of sbatch options] script_name
 
@@ -374,7 +374,7 @@ Refer to the sbatch man page for detailed information on the options.
 squeue/scontrol/sinfo
 ^^^^^^^^^^^^^^^^^^^^^
 
-Commands that display batch job and partition information .
+Commands that display batch job and partition information:
 
 .. table:: Common squeue, scontrol, and sinfo Commands
 
@@ -394,10 +394,10 @@ Commands that display batch job and partition information .
    |                         | job.                                      |
    +-------------------------+-------------------------------------------+
    | sinfo -a                | List summary information on all the       |
-   |                         | partition.                                |
+   |                         | partitions.                                |
    +-------------------------+-------------------------------------------+
 
-See the manual (man) pages for other available options.
+See the manual (man) pages for other available options for the commands above.
 
 **srun**
 
@@ -407,10 +407,10 @@ For example, the following command:
 
 ::
 
-   srun -A account_name --time=00:30:00 --nodes=1 --ntasks-per-node=16 \
-   --partition=gpuH100x8 --gpus=1 --mem=16g --pty /bin/bash
+   srun -A <account_name> --time=00:30:00 --nodes=1 --ntasks-per-node=16 \
+   --partition=gpu --gpus=1 --mem=16g --pty bash
 
-will run an interactive job in the gpuH100x8 partition with a wall clock
+will run an interactive job in the gpu partition with a wall clock
 limit of 30 minutes, using one node and 16 cores per node and 1 gpu. You
 can also use other sbatch options such as those documented above.
 
@@ -418,20 +418,22 @@ After you enter the command, you will have to wait for SLURM to start
 the job. As with any job, your interactive job will wait in the queue
 until the specified number of nodes is available. If you specify a small
 number of nodes for smaller amounts of time, the wait should be shorter
-because your job will backfill among larger jobs. You will see something
-like this:
+because your job will backfill among larger jobs. 
+.. You will see something like this:
 
-``srun: job 123456 queued and waiting for resources``
+.. ``srun: job 123456 queued and waiting for resources``
 
-Once the job starts, you will see:
+.. Once the job starts, you will see:
 
-``srun: job 123456 has been allocated resources``
+.. ``srun: job 123456 has been allocated resources``
 
-and will be presented with an interactive shell prompt on the launch
+.. THE MESSAGES ABOVE DO NOT SEEM TO BE ISSUED ON RAILS
+
+Once the job starts, you will be presented with an interactive shell prompt on the launch
 node. At this point, you can use the appropriate command to start your
 program.
 
-When you are done with your work, you can use the exit command to end
+When you are done with your work, you can use the *exit* command to end
 the job.
 
 **scancel**
@@ -488,26 +490,25 @@ details. Slurm supports job arrays for easy management of a set of
 similar jobs,
 see: `Slurm Job Array Support <https://slurm.schedmd.com/job_array.html>`_.
 
-Sample Slurm batch job scripts are provided in the section below.
+Sample Slurm batch job scripts are provided in the *Sample Scripts* section above.
 
 Direct ssh access to a compute node in a running batch job from a
-loginNN node is enabled, once the job has started.
+login node is enabled, once the job has started.
 
 ::
 
-   $ squeue --job jobid
+   $ squeue -u <username>
                 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-                12345       cpu     bash   gbauer  R       0:17      1 cn001
-
-Then in a terminal session:
+                21130       cpu     bash  cmendes  R       1:02      1 rails01
+ 
+Then in a terminal session in the login node:
 
 ::
 
-   $ ssh cn001
-   cn001.delta.internal.ncsa.edu (172.28.22.64)
-     OS: RedHat 8.4   HW: HPE   CPU: 128x    RAM: 252 GB
-     Site: mgmt  Role: compute
-   $
+   [cmendes@railsl1 ~]$ ssh rails01
+   [cmendes@rails01 ~]$ hostname
+   rails01
+   [cmendes@rails01 ~]$ <other_commands>  
 
 See also:
 
