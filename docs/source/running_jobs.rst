@@ -419,6 +419,7 @@ the job. As with any job, your interactive job will wait in the queue
 until the specified number of nodes is available. If you specify a small
 number of nodes for smaller amounts of time, the wait should be shorter
 because your job will backfill among larger jobs. 
+
 .. You will see something like this:
 
 .. ``srun: job 123456 queued and waiting for resources``
@@ -431,9 +432,7 @@ because your job will backfill among larger jobs.
 
 Once the job starts, you will be presented with an interactive shell prompt on the launch
 node. At this point, you can use the appropriate command to start your
-program.
-
-When you are done with your work, you can use the *exit* command to end
+program. When you are done with your work, you can use the *exit* command to end
 the job.
 
 **scancel**
@@ -519,7 +518,7 @@ Scheduler
 
 `Slurm Quick Start User Guide <https://slurm.schedmd.com/quickstart.html>`_
 
-250 slurm quick reference guide
+..   250 slurm quick reference guide
 
 Partitions (Queues)
 -----------------------
