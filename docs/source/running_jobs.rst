@@ -374,7 +374,7 @@ Refer to the sbatch man page for detailed information on the options.
 squeue/scontrol/sinfo
 ^^^^^^^^^^^^^^^^^^^^^
 
-Commands that display batch job and partition information:
+Commands that display batch job and partition information
 
 .. table:: Common squeue, scontrol, and sinfo Commands
 
