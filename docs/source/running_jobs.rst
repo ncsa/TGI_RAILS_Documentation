@@ -267,23 +267,21 @@ what is needed.
 
 To start up a bash shell terminal on a cpu or gpu node
 
--  single core with 16GB of memory, with one task on a cpu node
+-  single core with 16GB of memory, with one task on a CPU node
 
 ::
 
-   srun --account=account_name --partition=cpu-interactive \
+   srun --account=<account_name> --partition=cpu \
      --nodes=1 --tasks=1 --tasks-per-node=1 \
-     --cpus-per-task=4 --mem=16g \
-     --pty bash
+     --cpus-per-task=4 --mem=16g --pty bash
 
--  single core with 20GB of memory, with one task on a A40 gpu node
+-  single core with 20GB of memory, with one task on a GPU node
 
 ::
 
-   srun --account=account_name --partition=gpuA40x4-interactive \
-     --nodes=1 --gpus-per-node=1 --tasks=1 \
-     --tasks-per-node=16 --cpus-per-task=1 --mem=20g \
-     --pty bash
+   srun --account=<account_name> --partition=gpu \
+     --nodes=1 --gpus-per-node=1 --tasks=1 --tasks-per-node=16 \
+     --cpus-per-task=1 --mem=20g --pty bash
 
 | 
 
@@ -345,15 +343,14 @@ Interactive X11 Support
 
 To run an X11 based application on a compute node in an interactive
 session, the use of the ``--x11`` switch with ``srun`` is needed. For
-example, to run a single core job that uses 1g of memory with X11 (in
+example, to run a single core job that uses 16g of memory with X11 (in
 this case an xterm) do the following:
 
 ::
 
-   srun -A abcd-delta-cpu  --partition=cpu-interactive \
+   srun -A <account_name> --partition=cpu \
      --nodes=1 --tasks=1 --tasks-per-node=1 \
-     --cpus-per-task=2 --mem=16g \
-     --x11  xterm
+     --cpus-per-task=2 --mem=16g --x11  xterm
 
 .. _file-system-dependency-specification-for-jobs-1:
 
