@@ -23,11 +23,10 @@ institution's TGI support team or send questions to help@ncsa.illinois.edu
  DataServices@taylorgeospatial.org asking you to setup an `NCSA account <https://identity.ncsa.illinois.edu/join/JULMUHKSBU>`_
  and enroll in `Duo two-factor authentication <https://wiki.ncsa.illinois.edu/display/USSPPRT/NCSA+Identity+and+Duo+Setup>`_.
 
- 3. Once your NCSA account is setup you can submit a proposal using the `NCSA XRAS interface. 
-<https://xras-submit.ncsa.illinois.edu/opportunities/532814/requests/new>`_ The proposal will need 
-to include a title, the TGI institution you are affiliated with, a short abstract suitable for 
-posting on public web sites, a statement of the project goals and a best estimate of the allocation 
-you'll need on RAILS. 
+ 3. Once your NCSA account is setup you can submit a proposal using the `NCSA XRAS interface <https://xras-submit.ncsa.illinois.edu/opportunities/532814/requests/new>`_.
+ The proposal will need to include a title, the TGI institution you are affiliated with, a short 
+ abstract suitable for posting on public web sites, a statement of the project goals and a best 
+ estimate of the allocation you'll need on RAILS. 
 
  4. After your project receives approval, it will be set up in the NCSA management system and on 
  TGI RAILS. You'll then have access to RAILS to and be able to submit jobs!
