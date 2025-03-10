@@ -406,7 +406,7 @@ See the manual (man) pages for other available options for the commands above.
 
 **srun**
 
-The srun command initiates an interactive job on compute nodes.
+The srun command can be used to initiate an interactive job on compute nodes.
 
 For example, the following command:
 
@@ -444,7 +444,7 @@ the job.
 
 The scancel command deletes a queued job or terminates a running job.
 
--  scancel JobID deletes/terminates a job.
+-  Usage: **scancel** JobID
 
 Job Status
 -----------------
@@ -505,7 +505,7 @@ login node is enabled, once the job has started.
                 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                 21130       cpu     bash  cmendes  R       1:02      1 rails01
  
-Then in a terminal session in the login node:
+Then in a terminal session in the login node invoke ssh:
 
 ::
 
@@ -528,14 +528,16 @@ Scheduler
 Partitions (Queues)
 -----------------------
 
-.. table:: Delta Production Default Partition Values
+.. Hiding for now this table containing Default Values 
 
-   ======================= ==========
-   Property                Value
-   ======================= ==========
-   Default Memory per core 1000 MB
-   Default Wallclock time  30 minutes
-   ======================= ==========
+.. .. table:: Delta Production Default Partition Values
+
+..    ======================= ==========
+..    Property                Value
+..    ======================= ==========
+..    Default Memory per core 1000 MB
+..    Default Wallclock time  30 minutes
+..    ======================= ==========
 
 .. table:: TGI RAILS Production Partitions/Queues
 
@@ -544,14 +546,11 @@ Partitions (Queues)
    |                      |          | per Job  | Duration | Running      | Factor   |
    |                      |          |          |          | in Queue/user|          |
    +======================+==========+==========+==========+==============+==========+
-   | cpu                  | CPU      | TBD      | 48 hr    | TBD          | 1.0      |
+   | cpu                  | CPU      | TBD      | 7 days   | no limit     | 1.0      |
    +----------------------+----------+----------+----------+--------------+----------+
-   | cpu-interactive      | CPU      | TBD      | 30 min   | TBD          | 2.0      |
+   | gpu                  | GPU      | TBD      | 7 days   | no limit     | 1.5      |
    +----------------------+----------+----------+----------+--------------+----------+
-   | gpuH100x8            | octa-H100| TBD      | 48 hr    | TBD          | 1.5      |
-   +----------------------+----------+----------+----------+--------------+----------+
-   | gpuH100x8-interactive| octa-H100| TBD      | 1 hr     | TBD          | 3.0      |
-   +----------------------+----------+----------+----------+--------------+----------+
+ 
 
 sview view of slurm partitions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -567,7 +566,7 @@ or adding the following Slurm options:
 
    --exclusive --mem=0
 
-GPU NVIDIA MIG (GPU slicing) for the H100 may be supported at a future
+GPU NVIDIA MIG (GPU slicing) for the H100 GPU may be supported at a future
 date.
 
 Pre-emptive jobs will be supported at a future date.
@@ -585,12 +584,12 @@ the following slurm directive
 
    --requeue 
 
-When a job is requeued due to an evant like a node failure, thebatch
+When a job is requeued due to an evant like a node failure, the batch
 script is initiated from its beginning. Job scripts need to be written
 to handle automatically restarting from checkpoints etc.
 
-Monitoring a Node During a Job
----------------------------------
+.. Monitoring a Node During a Job
+.. ---------------------------------
 
 Refunds
 ------------
@@ -599,5 +598,5 @@ Refunds are considered, when appropriate, for jobs that failed due to
 circumstances beyond user control.
 
 Projects wishing to request a refund should email
-help+tgi@ncsa.illinois.edu. Please include the batch job ids and the
+help@ncsa.illinois.edu. Please include the batch job ids and the
 standard error and output files produced by the job(s).
