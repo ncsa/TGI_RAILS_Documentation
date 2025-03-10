@@ -75,12 +75,17 @@ project. Example usage:
 
 ::
 
- [cmendes@railsl1 ~]$ jobcharge -d 10 bcfz-tgirails
- Charges for account bcfz-tgirails from 2025-02-26-20:17:32 through 2025-03-08-20:17:32.
- User       Charge (SU)
- -------  -------------
- cmendes           0.14
- Total             0.14
+ [cmendes@railsl1 ~]$ jobcharge -d 180 bcfz-tgirails
+ Charges for account bcfz-tgirails from 2024-09-11-10:20:37 through 2025-03-10-10:20:37.
+ User        Charge (SU)
+ --------  -------------
+ abbode2          257.39
+ arnoldg            6.56
+ cmendes           45.9
+ jenos            724.81
+ mshow            343.19
+ rbrunner         245.53
+ Total           1623.38
 
  [cmendes@railsl1 ~]$ jobcharge -h
  usage: jobcharge [-h] [-s STARTTIME] [-e ENDTIME] [--detail] [-m MONTH] [-y YEAR] [-d DAYSBACK] [-a] account
