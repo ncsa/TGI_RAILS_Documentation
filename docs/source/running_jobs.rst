@@ -35,10 +35,11 @@ be added to other projects over time.
 
   [cmendes@railsl2 ~]$ accounts
   Project Summary for User cmendes:
+  
+  Project        Description      Balance    Deposited    Usage (SUs)
+  -------------  -------------  ---------  -----------  -------------
+  bcfz-tgirails  tgi               988887      1010000          21113
 
-  Project        Description      Usage (SUs)
-  -------------  -------------  -------------
-  bcfz-tgirails  tgi                    21068
 
 Job Accounting Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
