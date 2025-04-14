@@ -3,7 +3,13 @@
 Code Server (VS Code)
 ========================
 
-The Open OnDemand dashboard provides an easy way to launch a VS Code environment in a web browser.
+Visual Studio Code (VS Code) is a lightweight and powerful source code editor that supports 
+development in a wide range of programming languages. It offers features like syntax highlighting, 
+debugging, version control integration, and extensions for additional functionality. With Code 
+Server, VS Code can be run directly in a web browser, providing a seamless development experience 
+without requiring a local installation. The Open OnDemand dashboard provides an easy way to launch 
+a VS Code environment in a web browser. To start Vscode, click on **Interactive Apps > Vscode** in 
+the navigation bar. You can then select the resources you need and start the Vscode server.
 
 How to Start an OOD VS Code Session
 --------------------------------------

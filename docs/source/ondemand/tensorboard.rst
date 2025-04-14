@@ -3,7 +3,16 @@
 TensorBoard
 =============
 
-Launch TensorBoard, TensorFlow's visualization toolkit, from the Open OnDemand dashboard.
+TensorBoard is a visualization toolkit designed for monitoring and debugging machine learning 
+workflows. It is an compatable with both TensorFlow and PyTorch, providing tools to visualize 
+metrics like loss and accuracy, track model training progress, and analyze computational graphs. 
+Its interactive interface allows for real-time monitoring of training processes and exploration 
+of logged data. To start Tensorboard, click on **Interactive Apps > Tensorboard** in the 
+navigation bar. You can then select the resources you need and start the Tensorboard server.
+
+.. figure:: images/tensorboard-home.png
+      :alt: Open OnDemand TensorBoard session showing the TensorBoard interface.
+      :width: 500
 
 How to Start an OOD TensorBoard Session
 ------------------------------------------
@@ -38,13 +47,7 @@ How to Start an OOD TensorBoard Session
       :alt: Open OnDemand My Interactive Sessions screen showing the TensorBoard session with the Connect to TensorBoard button.
       :width: 500
 
-#. You are now in your TensorBoard environment. 
-
-   .. figure:: images/tensorboard-home.png
-      :alt: Open OnDemand TensorBoard session showing the TensorBoard interface.
-      :width: 500
-
-#. You can view the time remaining on your interactive sessions by clicking  **My Interactive Sessions** in the Open OnDemand dashboard.
+#. You are now in your TensorBoard environment. You can view the time remaining on your interactive sessions by clicking  **My Interactive Sessions** in the Open OnDemand dashboard.
 
    .. figure:: images/ood-interactive-sessions-button.png
       :alt: Open OnDemand options at top of window with the My Interactive Sessions button highlighted.

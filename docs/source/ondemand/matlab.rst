@@ -17,6 +17,10 @@ includes the Live Editor for creating scripts that combine code, output, and for
 executable notebook. The Open OnDemand dashboard provides an easy way to launch a Matlab 
 environment in a web browser.
 
+.. figure:: images/matlab-home.png
+      :alt: Open OnDemand MATLAB session showing the MATLAB interface.
+      :width: 500
+
 How to Start an OOD MatLab Session
 --------------------------------------
 
@@ -65,13 +69,7 @@ How to Start an OOD MatLab Session
        :width: 500
 
 
-#. You are now in your MATLAB environment on Rails.
-
-   .. figure:: images/matlab-home.png
-      :alt: Open OnDemand MATLAB session showing the MATLAB interface.
-      :width: 500
-
-#.  You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** in the Open OnDemand dashboard.
+#. You are now in your MATLAB environment on Rails. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** in the Open OnDemand dashboard.
 
    .. figure:: images/ood-interactive-sessions-button.png
       :alt: Open OnDemand options at top of window with the My Interactive Sessions button highlighted.

@@ -3,10 +3,17 @@
 JupyterLab
 ============
 
-Jupyter notebooks are a powerful tool for data analysis and visualization. The Open OnDemand 
-dashboard provides an easy way to launch a JupyterLab environment on RAILS. To start a Jupyter 
-notebook, click on **Interactive Apps > Jupyter Notebook** in the navigation bar. You can then 
-select the resources you need and start the notebook server.
+JupyterLab is the latest web-based interactive development environment from jupyter for notebooks, 
+code, and data. Its flexible interface allows users to configure and arrange workflows in data 
+science, scientific computing, computational journalism, and machine learning. Jupyter notebooks 
+are a powerful tool for data analysis and visualization. The Open OnDemand dashboard provides an 
+easy way to launch a JupyterLab environment on RAILS. To start a Jupyter notebook, click on 
+**Interactive Apps > Jupyter Notebook** in the navigation bar. You can then select the resources 
+you need and start the notebook server.
+
+.. figure:: images/jupyterLab-home.png
+      :alt: Open OnDemand Jupyter Lab session showing the Jupyter Lab interface.
+      :width: 500
 
 How to Start an OOD JupyterLab Session
 -----------------------------------------
@@ -40,13 +47,7 @@ How to Start an OOD JupyterLab Session
       :alt: Open OnDemand My Interactive Sessions screen showing the Jupyter Lab session with the Connect to Jupyter button.
       :width: 500
 
-#. You are now in your JupyterLab environment on RAILS. 
-
-   .. figure:: images/jupyterLab-home.png
-      :alt: Open OnDemand Jupyter Lab session showing the Jupyter Lab interface.
-      :width: 500
-
-#. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** from the Open OnDemand dashboard.
+#. You are now in your JupyterLab environment on RAILS. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** from the Open OnDemand dashboard.
 
    .. figure:: images/ood-interactive-sessions-button.png
       :alt: Open OnDemand options at top of window with the My Interactive Sessions button highlighted.
