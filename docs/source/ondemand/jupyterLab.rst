@@ -3,7 +3,10 @@
 JupyterLab
 ============
 
-The Open OnDemand dashboard provides an easy way to launch a JupyterLab environment on RAILS.
+Jupyter notebooks are a powerful tool for data analysis and visualization. The Open OnDemand 
+dashboard provides an easy way to launch a JupyterLab environment on RAILS. To start a Jupyter 
+notebook, click on **Interactive Apps > Jupyter Notebook** in the navigation bar. You can then 
+select the resources you need and start the notebook server.
 
 How to Start an OOD JupyterLab Session
 -----------------------------------------
@@ -12,6 +15,7 @@ How to Start an OOD JupyterLab Session
 #. Open the **Interactive Apps** menu at the top of the window and click **Jupyter Lab**.
 #. Fill out the form and then click **Launch**.
 
+   - **Kernal Module** - Select the default kernel you want to use for your JupyterLab session. This can be changed from within jupyterlab as well.
    - **Name of account** - This must match one of your available RAILS accounts; these are listed under ``Project`` when you run the ``accounts`` command on RAILS.
    - **Name of reservation** - Leave empty if none.
    - **Partition** - Select which partition you want to use for the session. (CPU or GPU)
@@ -26,17 +30,23 @@ How to Start an OOD JupyterLab Session
 
 #. After you click **Launch**, you will be taken to **My Interactive Sessions** where you can view the status of your session.
 
-   .. figure:: images/jupyterLab-starting.png
+   .. figure:: images/jupyterLab-queued.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Jupyter Lab session status: "Your session is currently starting...Please be patient as this process can take a few minutes."
       :width: 500
 
 #. Once your session has started, click **Connect to Jupyter** to launch your JupyterLab environment. Note, this can take up to few minutes depending on availability.
 
-   .. figure:: images/jupyterLab-connect.png
+   .. figure:: images/jupyterLab-running.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Jupyter Lab session with the Connect to Jupyter button.
       :width: 500
 
-#. You are now in your JupyterLab environment on RAILS. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** from the Open OnDemand dashboard.
+#. You are now in your JupyterLab environment on RAILS. 
+
+   .. figure:: images/jupyterLab-home.png
+      :alt: Open OnDemand Jupyter Lab session showing the Jupyter Lab interface.
+      :width: 500
+
+#. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** from the Open OnDemand dashboard.
 
    .. figure:: images/ood-interactive-sessions-button.png
       :alt: Open OnDemand options at top of window with the My Interactive Sessions button highlighted.

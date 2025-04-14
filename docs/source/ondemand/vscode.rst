@@ -26,17 +26,17 @@ How to Start an OOD VS Code Session
 
 #. After you click **Launch**, you will be taken to **My Interactive Sessions** where you can view the status of your session.
 
-   .. figure:: images/vs-code-starting.png
+   .. figure:: images/vs-code-queued.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Code Server session status: "Your session is currently starting...Please be patient as this process can take a few minutes."
       :width: 500
 
 #. Once your session has started, click **Connect to VS Code** to launch your VS Code environment. Note, this may take a few minutes.
 
-   .. figure:: images/vs-code-connect.png
+   .. figure:: images/vs-code-running.png
       :alt: Open OnDemand My Interactive Sessions screen showing the Code Server session with the Connect to VS Code button.
       :width: 500
 
-#. You are now in your VS Code environment on Delta. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** in the Open OnDemand dashboard.
+#. You are now in your VS Code environment on Rails. You can view the time remaining on your interactive sessions by clicking **My Interactive Sessions** in the Open OnDemand dashboard.
 
    .. figure:: images/ood-interactive-sessions-button.png
       :alt: Open OnDemand options at top of window with the My Interactive Sessions button highlighted.
