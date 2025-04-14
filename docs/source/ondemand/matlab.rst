@@ -52,13 +52,13 @@ How to Start an OOD MatLab Session
       :alt: Open OnDemand My Interactive Sessions screen showing the MATLAB session with the Connect to MATLAB button.
       :width: 500
 
-#. Matlab server starting
+#. When you connect to the MatLab session you will be presented with the MatLab session manager interface. This controls the licensing of the matlab server and can be used to start and stop the MatLab server. If your institution has provided a site license for MATLAB, your MATLAB session will automatically start. If not you will need to provide licensing information yourself to access MATLAB. 
 
     .. figure:: images/matlab-server-starting.png
         :alt: Open OnDemand MATLAB session showing the server starting page.
         :width: 500
 
-#. License status
+#. If you need to provide licensing information, there are two options for doing so. If you have a site license, you will need to enter the server name for the license server. If you have a personal license, you will need to enter your email address and password.
 
     .. figure:: images/matlab-license-email.png
        :alt: MATLAB session showing the email license authentication page.
