@@ -13,7 +13,9 @@ Connecting
 ---------------
 
 The Rails OnDemand interface can be accessed by navigating in a web browser to 
-https://railsondemand.ncsa.illinois.edu. Upon successful login, you will be redirected to OnDemand dashboard. On the dashboard you can announcements and our message of the day. Along the top are tabs for the different features of OnDemand.
+https://railsondemand.ncsa.illinois.edu. Upon successful login, you will be redirected to OnDemand 
+dashboard. On the dashboard you can announcements and our message of the day. Along the top are 
+tabs for the different features of OnDemand.
 
 .. image:: images/dashboard.png
     :alt: OnDemand dashboard page
@@ -21,19 +23,40 @@ https://railsondemand.ncsa.illinois.edu. Upon successful login, you will be redi
 
 Managing files
 ----------------
-To manage files on RAILS, click on **Files > Home Directory** dropdown in the navigation bar, this will bring up a file browser. You can view, edit and delete files from this interface as well as upload and download files to and from your local machine.
+The Files app allows users to easily transfer files to or from their local machines, view and edit 
+files on RAILS. To manage files on RAILS, click on **Files > Home Directory** dropdown in the 
+navigation bar, this will bring up a file browser. By default the Files app will show your Home 
+Directory located at `/u/<your_username>`. If you have access to a shared project it will be under 
+`/projects/<project_name>`.
+
 
 .. Warning::
-    For large file transfers or transfers with many files, please use `Globus <globus>`_. File transfers through the OOD interface are limited to the amount of memory on the OnDemand server, the number of users currently using it, and browser limitations.
+    For large file transfers or transfers with many files, please use `Globus <globus>`_. File 
+    transfers through the OOD interface are limited to the amount of memory on the OnDemand server, 
+    the number of users currently using it, and browser limitations.
 
 Shell Access
 -----------------
-OnDemand provides a terminal interface that allows you to connect to RAILS just like you would with SSH. You can access the shell by clicking **Clusters > TGI RAILS Shell Access** from the navigation bar.
+OnDemand provides a terminal interface that allows you to connect to RAILS just like you would 
+with SSH. You can access the shell by clicking **Clusters > TGI RAILS Shell Access** from the 
+navigation bar.
 
 
 Job Management
 --------------
-You can create or edit job scripts, submit jobs, and monitor job status from the **Jobs** interface. In the navigation bar 
+
+**Active Jobs**
+
+The Active Jobs menu option takes you to a list of your jobs (pending, running, and recently 
+completed). You can filter the list to show all jobs or just your jobs. This includes jobs that 
+weren't started by OnDemand. Details about a job can be viewed by clicking on the arrow dropdown 
+on the left side of the job entry.
+
+**Job Composer**
+
+The Job Composer provides a template system for creating and managing batch jobs from within the 
+OnDemand interface. Please see the documentation provided by `Open OnDemand <https://osc.github.io/ood-documentation/release-1.8/applications/job-composer.html>`_ for more information
+
 
 Interactive apps
 ----------------
