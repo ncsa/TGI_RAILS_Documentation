@@ -71,7 +71,7 @@ Requests for resource allocation supplements (compute, GPU, or
 storage) and extensions can be made via the appropriate XRAS website.
 
 -  TGI allocation PIs can find instructions for requesting supplements and extensions at the bottom 
-   of the `Delta Allocations page. <https://wiki.ncsa.illinois.edu/display/USSPPRT/Delta+Allocations#DeltaAllocations-Requestingan%22Extension%22or%22Supplement%22foranexistingDeltaallocation>`__ 
+   of the `NCSA XRAS Allocations page. <https://docs.ncsa.illinois.edu/en/latest/allocations/xras-renew.html>`__ 
    While that page documents the process for Delta projects, the process is the same for TGI RAILS 
    projects.
 
