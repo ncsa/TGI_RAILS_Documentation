@@ -1,8 +1,8 @@
 Data Management
 ================
 
-**File Systems**
-----------------
+File Systems
+------------
 
 Storage on TGI RAILS is split into three types of spaces:
 
@@ -47,8 +47,15 @@ multiple jobs. Codes that need to perform I/O to many small files should
 target /tmp on each node of the job and save results to other
 filesystems before the job ends, paying attention to avoid filename collisions.
 
+Quotas and Policies
+---------------------
+/u/$HOME (unshared space, 5TB default quota)
+
+/projects/WXYZ (project shared space, 50TB default quota)
+
+
 Transferring Data
---------------------
+-----------------
 To transfer files to and from the TGI RAILS system :
 
 GUI apps need to support DUO 2-factor authentication
@@ -80,9 +87,6 @@ password prompt for DUO (push to device or passcode from DUO app).
       -  `Globus - Get Started <https://docs.globus.org/how-to/get-started/>`_
 
 .. _transferring-files:
-
-Accessing and Transferring Files 
-=================================
 
 .. _small-transfer-tools:
 
@@ -132,8 +136,3 @@ Sharing Files with Collaborators
 Access Controls
 ----------------
 
-Quotas and Policies
----------------------
-/u/$HOME (unshared space, 5TB default quota)
-
-/projects/WXYZ (project shared space, 50TB default quota)
