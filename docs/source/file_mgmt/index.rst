@@ -50,26 +50,27 @@ filesystems before the job ends, paying attention to avoid filename collisions.
 Quotas and Policies
 ----------------------
 
-The default quotas for users on TGI RAILS are shown below.  Please note that these are soft limits.
-A grace period is given before you are blocked from writing.  If you are over a limit and blocked 
+The default quotas for users on TGI RAILS are shown below. If you exceed the soft limit, you will 
+be notified by email and a grace period is given before you are blocked from writing. Exceeding 
+the hard limit will block you from writing immediately. If you are over a limit and blocked 
 from writing, you will need to delete or move data to a different space until you are under quota 
 before you can continue writing.
 
 .. table:: Default User Quotas
-   :widths: 15 15 30
+   :widths: 15 15 15 30
 
-   +-----------------+--------------+-----------------------------+
-   | File System     | Default      | Description                 |
-   |                 | User Quota   |                             |
-   +=================+==============+=============================+
-   | HOME (/u)       | 5.0 TB       | User home directory, Area   |
-   |                 |              | for software, scripts, job  |
-   |                 |              | files, etc.                 |
-   +-----------------+--------------+-----------------------------+
-   | WORK (/projects)| 50.0 TB      | Area for shared data for a  |
-   |                 |              | project, common data sets,  |
-   |                 |              | software, results, etc.     |
-   +-----------------+--------------+-----------------------------+
+   +-----------------+--------------+--------------+-----------------------------+
+   | File System     | User Quota   | User Quota   | Description                 |
+   |                 | (Soft Limit) | (Hard Limit) |                             |
+   +=================+==============+==============+=============================+
+   | HOME (/u)       | 5.0 TiB      | 10.0 TiB     | User home directory. Area   |
+   |                 |              |              | for software, scripts, job  |
+   |                 |              |              | files, etc.                 |
+   +-----------------+--------------+--------------+-----------------------------+
+   | WORK (/projects)| 50.0 TiB     | 75.0 TiB     | Area for shared data for a  |
+   |                 |              |              | project, common data sets,  |
+   |                 |              |              | software, results, etc.     |
+   +-----------------+--------------+--------------+-----------------------------+
 
 You can also see your current filesystem usage and quota by running `quota -s` on rails (-s provides human-readable units). 
 An example output is shown below:
