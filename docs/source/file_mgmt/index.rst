@@ -75,7 +75,8 @@ before you can continue writing.
 You can also see your current filesystem usage and quota by running `quota -s` on rails (-s provides human-readable units). 
 An example output is shown below:
 
-.. code-block:: terminal
+.. code-block::
+   
    Disk quotas for user USERNAME (uid XXXXX):
       Filesystem   space   quota   limit   grace   files   quota   limit   grace
    pool1.railsvast.internal.ncsa.edu:/u
