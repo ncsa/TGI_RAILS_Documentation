@@ -117,20 +117,20 @@ efficient and rapid access to stored data. This system includes two primary file
 Projects which share the same storage capacity.
 
 .. table:: File System Specs
-   :widths: 15 25 15 15 30
+   :widths: 15 25 15 30
 
-   +-----------------+---------------------+--------------+------------+-----------------------------+
-   | File System     | Total Capacity      | Default      | Purged     | Description                 |
-   |                 |                     | User Quota   |            |                             |
-   +=================+=====================+==============+============+=============================+
-   | HOME (/u)       | 560 TB Raw, ~1.7 PB | 18.5 TB      | Never      | User home directory, Area   |
-   |                 | accessible via VAST |              |            | for software, scripts, job  |
-   |                 | compression.        |              |            | files, etc.                 |
-   +-----------------+---------------------+--------------+------------+-----------------------------+
-   | WORK (/projects)| 560 TB Raw, ~1.7 PB | 37.185 TB    | Never      | Area for shared data for a  |
-   |                 | accessible via VAST |              |            | project, common data sets,  |
-   |                 | compression.        |              |            | software, results, etc.     |
-   +-----------------+---------------------+--------------+------------+-----------------------------+
-   | /tmp            | 1.92 TB CPU Node,   | None         | After each | Locally attached disk for   |
-   |                 | 3.84 TB GPU Node    |              | job        | fast small file IO.         |
-   +-----------------+---------------------+--------------+------------+-----------------------------+
+   +-----------------+---------------------+------------+-----------------------------+
+   | File System     | Total Capacity      | Purged     | Description                 |
+   |                 |                     |            |                             |
+   +=================+=====================+============+=============================+
+   | HOME (/u)       | 560 TB Raw, ~1.7 PB | Never      | User home directory, Area   |
+   |                 | accessible via VAST |            | for software, scripts, job  |
+   |                 | compression.        |            | files, etc.                 |
+   +-----------------+---------------------+------------+-----------------------------+
+   | WORK (/projects)| 560 TB Raw, ~1.7 PB | Never      | Area for shared data for a  |
+   |                 | accessible via VAST |            | project, common data sets,  |
+   |                 | compression.        |            | software, results, etc.     |
+   +-----------------+---------------------+------------+-----------------------------+
+   | /tmp            | 1.92 TB CPU Node,   | After each | Locally attached disk for   |
+   |                 | 3.84 TB GPU Node    | job        | fast small file IO.         |
+   +-----------------+---------------------+------------+-----------------------------+

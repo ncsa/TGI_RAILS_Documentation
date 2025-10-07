@@ -133,7 +133,44 @@ Access Controls
 ----------------
 
 Quotas and Policies
----------------------
-/u/$HOME (unshared space, 5TB default quota)
+----------------------
 
-/projects/WXYZ (project shared space, 50TB default quota)
+The default quotas for users on TGI RAILS are shown below.  Please note that these are soft limits, 
+and a grace period is given before you are blocked from writing.  If you are near or over a limit, 
+delete or archive data, or move data to an appropriate project space under `/projects/<code>`.
+
+.. table:: Default User Quotas
+   :widths: 15 15 30
+
+   +-----------------+--------------+-----------------------------+
+   | File System     | Default      | Description                 |
+   |                 | User Quota   |                             |
+   +=================+==============+=============================+
+   | HOME (/u)       | 5.0 TB       | User home directory, Area   |
+   |                 |              | for software, scripts, job  |
+   |                 |              | files, etc.                 |
+   +-----------------+--------------+-----------------------------+
+   | WORK (/projects)| 50.0 TB      | Area for shared data for a  |
+   |                 |              | project, common data sets,  |
+   |                 |              | software, results, etc.     |
+   +-----------------+--------------+-----------------------------+
+
+You can also see your current filesystem usage and quota by running `quota -s` on rails (-s provides human-readable units). 
+An example output is shown below:
+
+.. code-block:: terminal
+   Disk quotas for user USERNAME (uid XXXXX):
+      Filesystem   space   quota   limit   grace   files   quota   limit   grace
+   pool1.railsvast.internal.ncsa.edu:/u
+                     1067G   4657G   9314G            471k       0       0
+
+Interpreting the output
+~~~~~~~~~~~~~~~~~~~~~~~~
+- **Filesystem**: The storage location for the quota line (e.g., `/u` for HOME, `/projects/<code>` for project space).
+- **space**: Your current disk usage on that filesystem.
+- **quota**: Soft quota limit. If you exceed this, a grace period starts before you are blocked from writing.
+- **limit**: Hard limit. You will be immediately blocked from writing once this point is reached.
+- **grace**: Time remaining in the grace period when over the soft limit; blank if under quota.
+- **files**: Number of files/inodes you are using. The second set of quota/limit/grace are for file counts (inodes).
+
+
