@@ -76,14 +76,12 @@ You can also see your current filesystem usage and quota by running `quota -s` o
 An example output is shown below:
 
 .. code-block::
-   
+
    Disk quotas for user USERNAME (uid XXXXX):
       Filesystem   space   quota   limit   grace   files   quota   limit   grace
    pool1.railsvast.internal.ncsa.edu:/u
                      1067G   4657G   9314G            471k       0       0
 
-Interpreting the output
-~~~~~~~~~~~~~~~~~~~~~~~~
 - **Filesystem**: The storage location for the quota line (e.g., `/u` for HOME, `/projects/<code>` for project space).
 - **space**: Your current disk usage on that filesystem.
 - **quota**: Soft quota limit. If you exceed this, a grace period starts before you are blocked from writing.
