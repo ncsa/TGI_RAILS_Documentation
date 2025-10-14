@@ -17,7 +17,7 @@ institution's TGI support team or send questions to help@ncsa.illinois.edu
 
  1. Complete the `TGI Data Services Request <https://arcg.is/01DLDX0>`_ form on the TGI website, 
  select “Data Processing or Analytics” under “What service do you need?” and answer the subsequent 
- questions regarding the specifics of your request.
+ questions regarding the specifics of your request. Make sure to supply an email affiliated with your institution when you fill out the form.
 
  2. Once your request has been processed and approved by TGI, you will receive an email from 
  DataServices@taylorgeospatial.org asking you to setup an `NCSA account <https://identity.ncsa.illinois.edu/join/JULMUHKSBU>`_
