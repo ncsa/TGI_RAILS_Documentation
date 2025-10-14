@@ -72,23 +72,29 @@ before you can continue writing.
    |                 |              |              | software, results, etc.     |
    +-----------------+--------------+--------------+-----------------------------+
 
-You can also see your current filesystem usage and quota by running `quota -s` on rails (-s provides human-readable units). 
+You can also see your current filesystem usage and quota by running the `quota` command on rails. 
 An example output is shown below:
 
 .. code-block::
 
-   Disk quotas for user USERNAME (uid XXXXX):
-      Filesystem   space   quota   limit   grace   files   quota   limit   grace
-   pool1.railsvast.internal.ncsa.edu:/u
-                     1067G   4657G   9314G            471k       0       0
+   Quota usage for user USERNAME:
+   -----------------------------------------------------------------------------------------------
+   |        Directory Path        |  User   |  User   |  User   |   User   |   User   |   User   |
+   |                              |  Block  |  Soft   |  Hard   |   File   |   Soft   |   Hard   |
+   |                              |  Used   |  Quota  |  Limit  |   Used   |   Quota  |   Limit  |
+   -----------------------------------------------------------------------------------------------
+   | /u/USERNAME                   | 1068G   | 5120G   | 10240G  | 476k     | 0        | 0        |
+   -----------------------------------------------------------------------------------------------
 
-- **Filesystem**: The storage location for the quota line (e.g., `/u` for HOME, `/projects/<code>` for project space).
-- **space**: Your current disk usage on that filesystem.
-- **quota**: Soft quota limit. If you exceed this, a grace period starts before you are blocked from writing.
-- **limit**: Hard limit. You will be immediately blocked from writing once this point is reached.
-- **grace**: Time remaining in the grace period when over the soft limit; blank if under quota.
-- **files**: Number of files/inodes you are using. The second set of quota/limit/grace are for file counts (inodes).
-
+   Quota usage for allocations user USERNAME is a member of:
+   --------------------------------------------------------------------------------------------------------------
+   |        Directory Path        | Allocation | Allocation | Allocation | Allocation | Allocation | Allocation |
+   |                              |   Block    |    Soft    |    Hard    |    File    |    Soft    |    Hard    |
+   |                              |   Used     |    Quota   |    Limit   |    Used    |    Quota   |    Limit   |
+   --------------------------------------------------------------------------------------------------------------
+   | /projects/XXXX               | 37G        | -          | 75T        | 21k        | -          | 30M        |
+   | /projects/YYYY               | 3.0T       | -          | 75T        | 332k       | -          | 30M        |
+   --------------------------------------------------------------------------------------------------------------
 
 
 Transferring Data
