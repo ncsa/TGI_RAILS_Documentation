@@ -1,6 +1,10 @@
 System Architecture
 =======================
 
+.. Note::
+   TGI RAILS is expanding to include 9 NVIDIA A100 GPU compute nodes soon. While not available for 
+   use yet, the details of these nodes are listed here, and are expected to be available by Q1 2026.
+
 Compute Nodes
 ----------------------
 
