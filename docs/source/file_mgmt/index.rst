@@ -170,12 +170,3 @@ One-time Setup
 ~~~~~~~~~~~~~~~~
 
 You will need to set up a separate account on globus.org, that will have a username and a separate password.  To use Globus to transfer files to and from TGI RAILS, if you haven't already, you will need to "link" your new Globus account with your NCSA identity.  Log into globus.org, click on "Account" in the left sidebar, then click on the "Identities" tab.  If your NCSA username and email address is not in that list, then click "Link Another Identity" in the upper right to link it.
-
-
-Sharing Files with Collaborators
---------------------------------
-
-
-Access Controls
-----------------
-
