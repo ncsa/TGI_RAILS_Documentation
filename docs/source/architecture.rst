@@ -9,6 +9,7 @@ TGI RAILS is made up of a total of 8 nodes of three node types:
 - 2 Dual-socket CPU-only login nodes
 - 3 Dual-socket CPU-only compute nodes
 - 3 Dual-socket 8-way NVIDIA H100 GPU compute nodes
+- 9 Dual-socket 2-way NVIDIA A100 GPU compute nodes (Coming Soon Q1 2026)
 
 All processors are Intel Sapphire Rapids CPUs and all have hardware multithreading turned on.
 
@@ -25,15 +26,16 @@ nodes do not contain GPUs and are not intended for computationally intensive wor
    ========================= ===================
    Model                     Dell PowerEdge R660
    Number of nodes           2
-   CPU                       Intel Sapphire Rapids 6426Y (PCIe Gen5)            
+   CPU                       Intel Sapphire Rapids 6426Y           
    Sockets per node          2
    Cores per socket          16
    Cores per node            32
    Hardware threads per core 2
    Hardware threads per node 64
-   Clock rate (GHz)          ~ 2.50
-   RAM (GB)                  256
+   Clock rate                ~ 2.50 GHz
+   RAM                       256 GB
    Cache L1/L2/L3            48KB / 2MB / 37.5MB
+   Interconnect              2 x 100GBe (25GB/s)
    ========================= ===================
 
 CPU Compute Node Specifications
@@ -46,57 +48,81 @@ CPU Compute Node Specifications
    ========================= ===================
    Model                     Dell PowerEdge R760
    Number of nodes           3
-   CPU                       Intel Sapphire Rapids 8468 (PCIe Gen5)
+   CPU                       Intel Sapphire Rapids 8468
    Sockets per node          2
    Cores per socket          48
    Cores per node            96
    Hardware threads per core 2
    Hardware threads per node 192
-   Clock rate (GHz)          ~ 2.10
-   RAM (GB)                  512
+   Clock rate                ~ 2.10 GHz
+   RAM                       512 GB
    Cache L1/L2/L3            48KB (p/core) / 2MB (p/core) / 105MB (shared)
-   Local storage (TB)        1.92 TB
+   Local storage             1.92 TB NVME
+   Interconnect              2 x 100GBe (25GB/s)
    ========================= ===================
 
 GPU Compute Node Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. table:: GPU Compute Node Specs
+.. table:: H100 GPU Node Specs
+   ========================= ===================
+   Specification             Value
+   ========================= ===================
+   Model                     Dell XE9680  
+   Number of nodes           3
+   GPU                       `NVIDIA H100 <https://www.nvidia.com/en-us/data-center/h100/>`_ 
+   GPUS per node             8
+   GPU Memory                80 GB
+   CPU                       Intel Sapphire Rapids 8468
+   Sockets per node          2
+   Cores per socket          48
+   Cores per node            96
+   Hardware threads per core 2
+   Hardware threads per node 192
+   Clock rate                 ~ 2.10 GHz
+   RAM                       2,048 GB
+   Cache L1/L2/L3            48KB (p/core) / 2MB (p/core) / 105MB (shared)
+   Local storage             3.84 TB NVME
+   Interconnect              4 x 100GBe (50GB/s)
+   ========================= ===================
 
-   +---------------------------+-----------------------------------------+
-   | Specification             | Value                                   |
-   +===========================+=========================================+
-   | Model                     | Dell XE9680                             |
-   +---------------------------+-----------------------------------------+
-   | Number of nodes           | 3                                       |
-   +---------------------------+-----------------------------------------+
-   | GPU                       | `NVIDIA H100 <https://www.nvidia.com/en |
-   |                           | -us/data-center/h100/>`_                |
-   +---------------------------+-----------------------------------------+
-   | GPUs per node             | 8                                       |
-   +---------------------------+-----------------------------------------+
-   | GPU Memory (GB)           | 80                                      |
-   +---------------------------+-----------------------------------------+
-   | CPU                       | Intel Sapphire Rapids 8468              |
-   +---------------------------+-----------------------------------------+
-   | CPU sockets per node      | 2                                       |
-   +---------------------------+-----------------------------------------+
-   | Cores per socket          | 48                                      |
-   +---------------------------+-----------------------------------------+
-   | Cores per node            | 96                                      |
-   +---------------------------+-----------------------------------------+
-   | Hardware threads per core | 2                                       |
-   +---------------------------+-----------------------------------------+
-   | Hardware threads per node | 192                                     |
-   +---------------------------+-----------------------------------------+
-   | Clock rate (GHz)          | ~ 2.10                                  |
-   +---------------------------+-----------------------------------------+
-   | RAM (GB)                  | 2,048                                   |
-   +---------------------------+-----------------------------------------+
-   | Cache L1/L2/L3            | 48KB(p/core)/ 2MB(p/core)/ 105MB(shared)|
-   +---------------------------+-----------------------------------------+
-   | Local storage (TB)        | 3.84 TB                                 |
-   +---------------------------+-----------------------------------------+
+.. table:: A100 GPU Node Specs (Coming Soon Q1 2026)
+
+   ========================= ===================
+   Specification             Value
+   ========================= ===================
+   Model                     Dell PowerEdge R7525
+   Number of nodes           7
+   CPU                       AMD EPYC CPU 7452 (32 core, Rome) 
+   Sockets per node          2
+   Cores per socket          32
+   Cores per node            64
+   Hardware threads per core 1
+   Hardware threads per node 64
+   Clock rate                ~ 2.35 GHz
+   RAM                       256 GB
+   Cache L1/L2/L3            32KB (p/core) / 512KB (p/core) / 16MB (shared)
+   Local storage             1.5 TB NVME
+   Interconnect              2 x 100GBe (25GB/s)
+   ========================= ===================
+
+   ========================= ===================
+   Specification             Value
+   ========================= ===================
+   Model                     Dell PowerEdge R7525
+   Number of nodes           2
+   CPU                       AMD EPYC CPU 7453 (28 core, Milan) 
+   Sockets per node          2
+   Cores per socket          28
+   Cores per node            56
+   Hardware threads per core 1
+   Hardware threads per node 56
+   Clock rate                ~ 2.75 GHz
+   RAM                       256 GB
+   Cache L1/L2/L3            32KB (p/core) / 512KB (p/core) / 16MB (shared)
+   Local storage             1.5 TB NVME
+   Interconnect              2 x 100GBe (25GB/s)
+   ========================= ===================
 
 Network
 ------------
